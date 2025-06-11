@@ -1,0 +1,17 @@
+---
+import Pills from "../components/Pills.astro";
+import Title from "../components/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import TitleBar from "../sections/TitleBar.astro";
+import BuscadorExamenes from "../components/BuscadorExamenes.jsx";
+import Map from "../sections/Map.astro";
+---
+
+<Layout>
+    <TitleBar title="Buscador" />
+    <section class="mt-32">
+        <Title title="Lista de exámenes" classTitle={"text-center"} positionBar={"center"} />
+        <BuscadorExamenes client:load />
+    </section>
+    <Map heightMap="450" />
+</Layout>

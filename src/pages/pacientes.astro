@@ -1,0 +1,143 @@
+---
+import Title from "../components/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import Evaluation from "../sections/Evaluation.astro";
+import ListDiseases from "../sections/ListDiseases.astro";
+import Map from "../sections/Map.astro";
+import Pills from "../components/Pills.astro";
+import ContainerSearch from "../components/ContainerSearch.astro";
+import { Icon } from 'astro-icon/components'
+---
+
+<Layout>
+    <section class="w-full h-[30vh] md:h-[65vh]">
+        <div class={`h-full w-full bg-[url('/recursos/pacientes-portada.webp')] bg-cover`}></div>
+    </section>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 -mt-40">
+        <div class="bg-primary h-80 flex flex-col justify-center items-center">
+            <div class="max-w-[200px]">
+                <Icon name="tubo_ensayo" class="text-white text-6xl" />
+                <h3 class="text-3xl font-semibold text-white mb-3">Gestionar una cita</h3>
+                <a href="https://gastrolab.citas.ingenius.online" target="_blank" class="text-xs font-bold text-primary bg-white border border-primary rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary hover:text-white hover:border hover:border-white">Clic aquí</a>
+            </div>
+        </div>
+        <div class="bg-primary-light h-80 flex flex-col justify-center items-center">
+            <div class="max-w-[200px]">
+                <Icon name='result' class="text-white text-6xl" />
+                <h3 class="text-3xl font-semibold text-white mb-3">Ver resutados</h3>
+                <a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="text-xs font-bold text-primary-light border border-primary-light bg-white rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary-light hover:text-white hover:border hover:border-white">Clic aquí</a>
+            </div>
+        </div>
+        <div class="bg-red-500/95 h-80 flex flex-col justify-center items-center">
+            <div class="max-w-[200px]">
+                <Icon name="calendar_cancel" class="text-white text-6xl" />
+                <h3 class="text-3xl font-semibold text-white mb-3">Cancelar una cita</h3>
+                <a href="https://gastrolab.citas.ingenius.online" target="_blank" class="text-xs font-bold text-red-500 bg-white rounded-full border border-red-500 px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-red-500 hover:text-white hover:border hover:border-white">Clic aquí</a>
+            </div>
+        </div>
+    </div>
+    <section class="px-5 md:px-0">
+        <div class="max-w-7xl mx-auto mt-32">
+            <Title title="Prepararse para una cita" classTitle={"text-left"} positionBar={"bottom"} />
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
+                <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">Confirma los Requisitos del Estudio</h3>
+                    <p class="text-black/70 pl-20 mt-3">Algunos estudios requieren ayuno, evitar ciertos alimentos o suspender medicamentos. Consulta con tu médico.</p>
+                </div>
+                <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">Hidrátate Bien</h3>
+                    <p class="text-black/70 pl-20 mt-3">Beber agua facilita la extracción de sangre y análisis de orina.</p>
+                </div>
+                <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">Informa Sobre tu Medicación</h3>
+                    <p class="text-black/70 pl-20 mt-3">Algunos medicamentos afectan los análisis, avisa al laboratorio.</p>
+                </div>
+                <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">Cumple con el ayuno (si aplica)</h3>
+                    <p class="text-black/70 pl-20 mt-3">Generalmente es de 8 a 12 horas, solo puedes tomar agua.</p>
+                </div>
+                <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">Evita el Alcohol y la Cafeína</h3>
+                    <p class="text-black/70 pl-20 mt-3">Pueden alterar los resultados, evitalos al menos 24 horas antes.</p>
+                </div>
+                <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">Llega con tiempo y relájate</h3>
+                    <p class="text-black/70 pl-20 mt-3">Evita el estrés y la actividad física intensa antes del estudio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="flex flex-col md:flex-row mt-32">
+        <div class="w-full md:w-1/2 h-72 md:h-auto bg-[url('/recursos/doctor-saludo.webp')] bg-cover">
+        </div>
+        <div class="w-full md:w-1/2 px-5 md:px-10 pt-10">
+            <div class="max-w-xl md:mr-14">
+                <Title title="Preguntas frecuentes sobre pruebas de laboratorio" classTitle={"text-left"} positionBar={"top"} />
+            </div>
+            <div class="bg-white rounded-3xl p-5 md:p-14 mt-10 md:-ml-40 md:max-w-[50rem]">
+                <div>
+                    <h3 class="text-2xl font-medium mb-3">¿Necesito ayunar antes de mi prueba?</h3>
+                    <p>Depende del estudio. Algunas pruebas, como glucosa o perfil lipídico, requieren ayuno de 8 a 12 horas. Consulta con el laboratorio para confirmar.</p>
+                </div>
+                <div class="mt-4">
+                    <h3 class="text-2xl font-medium mb-3">¿Que cantidad de muestra se necesita?</h3>
+                    <p>En muestras fecales, la cantidad mínima es de 5 gramos o 5 mililitros (aproximadamente una cucharita) si se va a hacer un sólo examen. Sí se piden varios exámenes la cantidad necesaria es proporcionalmente mayor. La muestra debe enviarse al laboratorio inmediatamente después de obtenida. Es preferible transportarla dentro de una caja térmica con refrigerantes y debe llegar al laboratorio antes de 3 horas desde su obtención.</p>
+                </div>
+                <div class="mt-4">
+                    <h3 class="text-2xl font-medium mb-3">¿Recogen muestras en la casa?</h3>
+                    <p>Sí, tenemos un servicio de recojo de muestras a domicilio para muestras fecales u orina. Usted nos llama tan pronto tenga la muestra y nosotros coordinaremos con usted el recojo de la muestra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="flex flex-col md:flex-row mt-32">
+        <div class="w-full md:w-1/2 px-5 md:px-10 pt-10 order-2 md:order-1">
+            <div class="max-w-xl md:ml-14">
+                <Title title="Preguntas frecuentes sobre resultados de las pruebas" classTitle={"text-left"} positionBar={"top"} />
+            </div>
+            <div class="bg-white rounded-3xl p-5 md:p-14 mt-10 md:-mr-40 md:ml-14 relative">
+                <div>
+                    <h3 class="text-2xl font-medium mb-3">¿Cuanto tiempo tardan los resultados?</h3>
+                    <p>El tiempo varía según la prueba. Algunas están listas en pocas horas, mientras que otras pueden tardar días. Consulta con el laboratorio para detalles específicos.</p>
+                </div>
+                <div class="mt-4">
+                    <h3 class="text-2xl font-medium mb-3">¿Puedo ver los resultados en la página web?</h3>
+                    <p>Sí. Nosotros le damos su Usuario y Contraseña y puede ver los resultados de todos los exámenes, los de ahora y cualquier examen anrterior que se haya hecho en nuestro laboratorio. También recibirá los resultados por email el mismo día que están listos. Los resultados los entregamos en formato PDF y usted los puede imprimir si fuera necesario. Su médico será informado de los resultados de la misma forma.</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 h-72 md:h-auto bg-[url('/recursos/doctor-tablet.webp')] bg-cover order-1 md:order-2">
+        </div>
+    </section>
+    <section class="mt-32 px-5 md:px-0">
+        <div class="max-w-7xl mx-auto">
+            <Title title="Pruebas a la carta y chequeo anual" classTitle={"text-center"} positionBar={"center"} />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-20">
+                <Pills title="Pruebas a la Carta" description="Busque aquí su examen ordenado por sección." image="condicion.webp" link="" id="" sizeImg="h-20 md:h-40" />
+                <Pills title="Chequeo Anual" description="Busque aquí su examen ordenado por exámen." image="examen.webp" link="" id="" sizeImg="h-20 md:h-40" />
+            </div>
+            <ContainerSearch title="Busca tus resultados" tipo="Paciente" image="doctora.webp" link="https://gastrolab.convenios.ingenius.online/" />
+        </div>
+    </section>
+    <ListDiseases />
+    <Evaluation />
+    <Map heightMap="450" />
+</Layout>

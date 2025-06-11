@@ -1,0 +1,68 @@
+---
+import Title from "../components/Title.astro";
+---
+
+<section>
+    <div class="max-w-7xl mx-auto mt-32">
+        <Title title="¿Quiénes somos?" classTitle={"text-center"} positionBar={"center"} /> 
+        <p class="text-lg text-black/70 mt-10 text-center max-w-3xl mx-auto px-5 md:px-0">GastroLab es un laboratorio clínico moderno y totalmente especializado en el campo de la investigación y diagnóstico de enfermedades gastrointestinales en todas las edades. GastroLab está ubicado en Lima, Perú.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-7 mt-20 relative">
+            <div class="absolute h-full w-0.5 bg-primary left-1/2 top-0 -translate-x-1/2 after:absolute after:w-8 after:h-8 after:rounded-full after:bg-primary after:left-1/2 after:top-0 after:-translate-x-1/2 before:absolute before:w-8 before:h-8 before:rounded-full before:bg-primary before:left-1/2 before:bottom-0 before:-translate-x-1/2 hidden md:block"></div>
+            <div class="px-10 md:px-20 py-5 order-2 md:order-1">
+                <Title title="Qué hacemos:" classTitle={"text-left"} positionBar={"top"} />
+                <p class="mt-10">GastroLab ofrece un amplio portafolio de exámenes de la especialidad muchos de los cuales son exclusivos de nuestro laboratorio y que los hacemos con la más alta calidad posible y la tecnología más sofisticada disponible, como los mejores laboratorios clínicos del mundo...todo esto respaldado por una atención de primera:</p>
+                <p class="italic font-medium text-xl my-5">Nuestro personal está a disposición de los médicos y sus pacientes para ayudar a resolver de la forma más rápida y fácil posible los problemas de diagnóstico que se presenten.</p>
+            </div>
+            <div class="px-10 md:px-20 py-5 flex items-center justify-center order-1 md:order-2">
+                <img
+                    src="/recursos/que-hacemos.webp"
+                    alt="about"
+                    class="w-full object-contain"
+                    width="180"
+                    height="55"
+                />
+            </div>
+            <div class="px-10 md:px-20 py-5 flex items-center justify-center order-3">
+                <img
+                src="/recursos/lab-doctor.webp"
+                alt="about"
+                class="w-full object-contain"
+                width="180"
+                height="55"
+                />
+            </div>
+            <div class="px-10 md:px-20 py-5 order-4">
+                <Title title="Innovamos constantemente:" classTitle={"text-left"} positionBar={"top"} />
+                <p class="mt-10">En GastroLab nos preocupamos por el valor clínico predictivo y el costo de los exámenes y sabemos que los exámenes con mejor costo-beneficio son los que proporcionan resultados más rápidos, con mayor sensibilidad y especificidad.</p>
+                <p class="italic font-medium text-xl my-5">Nuestro laboratorio dedica por eso importantes recursos para investigar e implementar nuevos exámenes y refinar los ya existentes.</p>
+            </div>
+            <div class="px-10 md:px-20 py-5 order-6 md:order-5">
+                <Title title="Nuestro equipo:" classTitle={"text-left"} positionBar={"top"} />
+                <p class="mt-10">El Director de nuestro laboratorio es un médico de larga trayectoria reconocido internacionalmente como un experto en esta área de la medicina - ha recibido varias distinciones y tiene numerosas publicaciones sobre investigaciones en este campo en las revistas médicas más prestigiosas del mundo (ver publicaciones).</p>
+                <p class="italic font-medium text-xl my-5">Nuestros tecnólogos son graduados de las mejores universidades del país, tienen mucha experiencia en lo que hacen y están en capacitación continua. Nuestras recepcionistas son personas de primera, muy amables, muy bien informadas.</p>
+            </div>
+            <div class="px-10 md:px-20 flex items-center justify-center order-5 md:order-6">
+                <img
+                src="/recursos/lab-doctors.webp"
+                alt="about"
+                class="w-full object-contain"
+                width="180"
+                height="55"
+                />
+            </div>
+            <div class="px-10 md:px-20 flex items-center justify-center order-7">
+                <img
+                src="/recursos/doctors-women.webp"
+                alt="about"
+                class="w-full object-contain"
+                width="180"
+                height="55"
+                />
+            </div>
+            <div class="px-10 md:px-20 py-5 order-8">
+                <Title title="Nuestro compromiso:" classTitle={"text-left"} positionBar={"top"} />
+                <p class="mt-10">Servir a nuestros médicos y su pacientes y ayudarlos en todo lo que esté a nuestro alcance.</p>
+            </div>
+        </div>
+    </div>
+</section>

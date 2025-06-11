@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import Title from "../components/Title.astro";
+---
+
+<section class="bg-tertiary pt-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center">
+        <div class="w-full md:w-[45%]">
+            <Image
+                src="/recursos/father-1.webp"
+                alt="evaluation"
+                class="w-full object-contain aspect-[793/804]"
+                width="180"
+                height="55"
+            />
+        </div>
+        <div class="w-full md:w-[55%] p-5 md:p-10 mt-10 md:mt-0">
+            <div class="bg-white rounded-3xl p-5 md:p-14 max-w-[50rem] flex flex-col justify-center">
+                <Title title="Evalúe su visita" classTitle={"text-center"} positionBar={"center"} />
+                <form method="POST" action="/ruta-del-servidor">
+                    <input type="hidden" name="puntuacion" id="puntuacion" />
+                    <h2 class="text-lg font-semibold mt-10 mb-2 text-center">Selecciona una puntuación</h2>
+                    <div id="rating-container" class="flex gap-2 justify-center flex-wrap" role="radiogroup" aria-label="Puntuación del 1 al 10">
+                    <!-- Botones generados por JS -->
+                    </div>
+                    <textarea name="comentarios" class="w-full h-40 p-4 border border-black rounded-xl mt-10 resize-none" placeholder="Dejanos tu comentario ..."></textarea>
+                    <button 
+                        type="submit" 
+                        class="text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary mx-auto mt-5 block w-32 text-center cursor-pointer drop-shadow-xl drop-shadow-primary/30">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="module">
+  document.addEventListener("astro:page-load", () => {
+    const container = document.getElementById('rating-container');
+    const inputPuntuacion = document.getElementById('puntuacion');
+
+    // Crear botones del 1 al 10
+    for (let i = 1; i <= 10; i++) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = i;
+      btn.className = 'w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center cursor-pointer text-gray-600 hover:bg-primary hover:text-white transition-colors duration-200 ease-in-out';
+      btn.dataset.value = i;
+      btn.setAttribute('role', 'radio');
+      btn.setAttribute('aria-checked', 'false');
+      container.appendChild(btn);
+    }
+
+    // Delegación de eventos
+    container.addEventListener('click', (e) => {
+      if (e.target.tagName === 'BUTTON') {
+        const selectedValue = e.target.dataset.value;
+
+        // Quitar selección anterior
+        container.querySelectorAll('button').forEach(btn => {
+          btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+          btn.classList.add('text-gray-600', 'border-gray-400');
+          btn.setAttribute('aria-checked', 'false');
+        });
+
+        // Aplicar selección nueva
+        e.target.classList.remove('text-gray-600', 'border-gray-400');
+        e.target.classList.add('bg-primary', 'text-white', 'border-primary');
+        e.target.setAttribute('aria-checked', 'true');
+
+        // Actualizar el input oculto
+        inputPuntuacion.value = selectedValue;
+      }
+    });
+  });
+</script>

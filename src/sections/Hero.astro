@@ -1,0 +1,9 @@
+---
+interface Props {
+    imagenUrl: string;
+}
+const { imagenUrl } = Astro.props;
+---
+<section class="w-full h-[75vh]">
+    <div class={`h-full w-full bg-[url("/recursos/${imagenUrl}")] bg-cover`}></div>
+</section>

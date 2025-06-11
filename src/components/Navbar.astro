@@ -1,0 +1,97 @@
+---
+import { Icon } from 'astro-icon/components'
+const pathname = Astro.url.pathname;
+
+---
+<header class="w-full sticky top-0 z-10 bg-white">
+	<nav class="max-w-7xl mx-auto h-24 flex items-center justify-between px-5 md:px-0">
+		<a href="/">
+			<img
+				src="/logo.svg"
+				alt="GastroLab"
+				width="180"
+				height="55"
+				class="h-24 object-contain"
+			/>
+		</a>
+		<button type="button" onclick="document.querySelector('.mobile-menu').classList.toggle('hidden')" class="md:hidden">
+			<Icon name="bars" class="w-6 h-6 text-primary" />
+        </button>
+		<ul class="md:flex md:flex-row flex-col items-center gap-1 text-black font-semibold hidden">
+			<li>
+				<a href="/" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/" && "bg-primary text-white"}`}>Inicio</a>
+			</li>
+			<li>
+				<a href="/buscador" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/buscador" && "bg-primary text-white"}`}>Exámenes</a>
+			</li>
+			<li>
+				<a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/#" && "bg-primary text-white"}`}>Resultados</a>
+			</li>
+			<li>
+				<a href="https://gastrolabperublog.com/" target="_blank" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/#" && "bg-primary text-white"}`}>Blog</a>
+			</li>
+			<li>
+				<a href="/nosotros" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/nosotros" && "bg-primary text-white"}`}>Acerca de GastroLab</a>
+			</li>
+			<li>
+				<a href="/contactanos" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/contactanos" && "bg-primary text-white"}`}>Contáctanos</a>
+			</li>
+		</ul>
+	</nav>
+	<section class="mobile-menu hidden fixed top-0 bg-white w-full h-screen transition-all duration-300">
+    <div class="flex justify-between items-center p-4">
+        <a href="/" class={`w-36 block`}>
+		  	<img
+				src="/logo.svg"
+				alt="GastroLab"
+				width="180"
+				height="55"
+				class="h-24 object-contain"
+			/>
+		</a>
+        <button type="button" onclick="toggleMenu()">
+          <svg
+                class="w-6 h-6 text-primary hover:rotate-180 transition-transform duration-300"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                d="m21 21-9-9m0 0L3 3m9 9 9-9m-9 9-9 9"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path></svg
+            >
+        </button>
+    </div>
+    <nav class="p-4">
+        <ul class="flex flex-col items-center gap-y-4 text-black font-semibold">
+			<li>
+				<a href="/" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Inicio</a>
+			</li>
+			<li>
+				<a href="/buscador" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Exámenes</a>
+			</li>
+			<li>
+				<a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300">Resultados</a>
+			</li>
+			<li>
+				<a href="https://gastrolabperublog.com/" target="_blank" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Blog</a>
+			</li>
+			<li>
+				<a href="/nosotros" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Acerca de GastroLab</a>
+			</li>
+			<li>
+				<a href="/contactanos" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Contáctanos</a>
+			</li>
+		</ul>
+      </nav>
+</section>
+</header>
+
+<script is:inline>
+    const menu = document.querySelector('.mobile-menu')
+    const toggleMenu = () => {
+        menu.classList.toggle('hidden')
+    }
+</script>

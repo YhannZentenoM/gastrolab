@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import Title from "../components/Title.astro";
+---
+
+<section class="max-w-7xl mx-auto my-32">
+    <Title 
+        title="Nuestros Servicios" 
+        classTitle={"text-center"} 
+        positionBar={"center"} 
+    />
+    <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-y-7 mt-20">
+        <div>
+            <Image
+                src="/recursos/labo-390x390.webp"
+                alt="services"
+                class="w-full"
+                width="390"
+                height="390"
+            />
+        </div>
+        <div class="px-10">
+            <span class="text-7xl mb-4 block">01</span>
+            <h3 class="text-3xl font-medium mb-6">Exámenes presenciales</h3>
+            <p class="text-black/70 mb-6">Algunos exámenes requieren la presencia del paciente en el laboratorio. El tiempo de permanencia en el laboratorio varía de acuerdo a cada examen.</p>
+            <a 
+                href="/contactanos" 
+                class="text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary mr-auto mt-5 block max-w-40 text-center drop-shadow-xl drop-shadow-primary/30">
+                contáctanos
+            </a>
+        </div>
+        <div>
+            <Image
+                src="/recursos/doc-390x390.webp"
+                alt="services"
+                class="w-full"
+                width="390"
+                height="390"
+            />
+        </div>
+        <div class="px-10">
+            <span class="text-7xl mb-4 block">02</span>
+            <h3 class="text-3xl font-medium mb-6">Entrega de resultados</h3>
+            <p class="text-black/70 mb-6">El tiempo de entrega de resultados depende de la naturaleza del examen y la hora de llegada de la muestra al laborato-rio. Algunos exámenes se procesan en determinados días de la semana y otros el mismo día que se recibe la muestra. En general, GastroLab ha organizado el trabajo analítico con el propósito de entregar los resultados lo más pronto que le sea posible.</p>
+            <a 
+                href="/contactanos" 
+                class="text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary mr-auto mt-5 block max-w-40 text-center drop-shadow-xl drop-shadow-primary/30">
+                contáctanos
+            </a>
+        </div>
+         <div>
+            <Image
+                src="/recursos/tubes-390x390.webp"
+                alt="services"
+                class="w-full"
+                width="390"
+                height="390"
+            />
+        </div>
+        <div class="px-10">
+            <span class="text-7xl mb-4 block">03</span>
+            <h3 class="text-3xl font-medium mb-6">Recojo de muestras</h3>
+            <p class="text-black/70 mb-6">Llame para recojo cuando ya tenga la muestra. La muestra debe tener como máximo 2 horas de recolectada a la llegada del motorizado, para asegurar la efectividad de las pruebas que realizamos.</p>
+            <a 
+                href="/contactanos" 
+                class="text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary mr-auto mt-5 block max-w-40 text-center drop-shadow-xl drop-shadow-primary/30">
+                contáctanos
+            </a>
+        </div>
+    </div>
+</section>

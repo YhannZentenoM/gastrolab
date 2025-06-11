@@ -1,0 +1,9 @@
+---
+interface Props {
+    heightMap: string;
+}
+const { heightMap } = Astro.props;
+---
+<section class="w-full aspect-auto">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.1588215658862!2d-76.97394038867942!3d-12.101277588090294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7a3c72f7fd3%3A0xe5087cefb51a9d63!2sGastroLab!5e0!3m2!1ses-419!2spe!4v1744009685530!5m2!1ses-419!2spe" width="100%" height={heightMap} style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>

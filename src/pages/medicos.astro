@@ -1,0 +1,53 @@
+---
+import ContainerSearch from "../components/ContainerSearch.astro";
+import Pills from "../components/Pills.astro";
+import Title from "../components/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import Map from "../sections/Map.astro";
+
+import { Icon } from 'astro-icon/components'
+---
+
+<Layout>
+    <section class="w-full h-[30vh] md:h-[65vh]">
+        <div class="h-full w-full bg-[url('/recursos/medicos.webp')] bg-cover"></div>
+    </section>
+    <section class="mt-32 px-5 md:px-0">
+        <div class="max-w-7xl mx-auto">
+            <Title title="Busca tus pruebas" classTitle={"text-center"} positionBar={"center"} />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-20">
+                <Pills id="" title="Por condición" description="Busque aquí su examen ordenado por condición." image="condicion.webp" link="/buscador" sizeImg="h-20 md:h-40" />
+                <Pills id="" title="Por Enfermedad" description="Busque aquí su examen ordenado por enfermedad." image="enfermedad.webp" link="/buscador" sizeImg="h-20 md:h-40" />
+            </div>
+            <ContainerSearch title="Busqueda de pruebas por orden alfabético" tipo="Médico" image="doctora-rubia.webp" link="/buscador" />
+        </div>
+    </section>
+    <section>
+        <div class="max-w-7xl mx-auto my-32 flex flex-col md:flex-row items-end justify-center gap-10">
+            <div class="w-full flex flex-col md:flex-row">
+                <div class="bg-primary h-80 flex flex-col justify-center items-center w-full">
+                    <div class="max-w-[200px]">
+                        <Icon name="result" class="text-white text-6xl" />
+                        <h3 class="text-3xl font-semibold text-white mb-3">Ver resultados</h3>
+                        <a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="text-xs font-bold text-primary bg-white border border-primary rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary hover:text-white hover:border hover:border-white">Clic aquí</a>
+                    </div>
+                </div>
+                <div class="bg-primary-light h-80 flex flex-col justify-center items-center w-full">
+                    <div class="max-w-[200px]">
+                        <Icon name="tubo_ensayo" class="text-white text-6xl" />
+                        <h3 class="text-3xl font-semibold text-white mb-3">Ordenar pruebas</h3>
+                        <a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="text-xs font-bold text-primary-light border border-primary-light bg-white rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary-light hover:text-white hover:border hover:border-white">Clic aquí</a>
+                    </div>
+                </div>
+            </div>
+            <img
+                src="/recursos/doctora.webp"
+                alt="doctora"
+                class="w-full max-w-[26rem] object-contain drop-shadow-2xl"
+                width="180"
+                height="55"
+            />
+        </div>
+    </section>
+    <Map heightMap="450" />
+</Layout>

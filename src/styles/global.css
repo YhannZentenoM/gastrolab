@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #3686ff;
+  --color-primary-light: #29adff;
+  --color-secondary: #04202f;
+  --color-tertiary: #eef2fd;
+
+  --drop-shadow-primary-card: 0 0 0.7rem #3686ff;
+  --drop-shadow-white-card: 0 0 0.7rem white;
+}

@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import Title from "../components/Title.astro";
+---
+
+<section class="w-full flex flex-col md:flex-row items-center mt-32">
+    <div class="w-full md:w-1/2 p-10 md:p-20 md:pl-44">
+        <Title 
+            title="¿Quiénes somos?" 
+            classTitle={"text-left"} 
+            positionBar={"top"} 
+        />
+        <div class="text-left mt-14 md:mt-28">
+            <p class="text-lg text-black/70 mb-5">GastroLab es un laboratorio clínico moderno y totalmente especializado en el campo de la investigación y diagnóstico de enfermedades gastrointestinales en todas las edades. GastroLab está ubicado en Lima, Perú.</p>
+            <a 
+                href="/nosotros" 
+                class="text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary mr-auto mt-10 block w-32 text-center drop-shadow-xl drop-shadow-primary/30">
+                Ver más
+            </a>
+        </div>
+    </div>
+    <div class="w-full md:w-1/2">
+        <Image
+            src="/recursos/labo-chef.webp"
+            alt="about"
+            class="w-full object-contain"
+            width="180"
+            height="55"
+        />
+    </div>
+</section>

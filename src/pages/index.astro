@@ -1,0 +1,18 @@
+---
+import Hero from '../sections/Hero.astro';
+import Layout from '../layouts/Layout.astro';
+import WorksHome from '../sections/WorksHome.astro';
+import AboutHome from '../sections/AboutHome.astro';
+import ServicesHome from '../sections/ServicesHome.astro';
+import Map from '../sections/Map.astro';
+---
+
+<Layout>
+	<section class="w-full h-[40vh] md:h-[75vh]">
+		<div class={`h-full w-full bg-[url("/recursos/labo.webp")] bg-cover`}></div>
+	</section>
+	<WorksHome />
+	<AboutHome />
+	<ServicesHome />
+	<Map heightMap='450' />
+</Layout>

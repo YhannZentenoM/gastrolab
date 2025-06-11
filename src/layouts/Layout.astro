@@ -1,0 +1,29 @@
+---
+import { ClientRouter } from "astro:transitions";
+
+import Navbar from "../components/Navbar.astro";
+import '@fontsource-variable/montserrat';
+import "../styles/global.css";
+import Footer from "../sections/Footer.astro";
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>GastroLab</title>
+		<ClientRouter />
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	body {
+		font-family: 'Montserrat Variable', sans-serif;
+	}
+</style>
