@@ -7,6 +7,18 @@ import Map from "../sections/Map.astro";
 import Pills from "../components/Pills.astro";
 import ContainerSearch from "../components/ContainerSearch.astro";
 import { Icon } from 'astro-icon/components'
+import { getPosts } from "../lib/wp";
+
+interface Post {
+  title: string;
+  content: string;
+}
+
+function stripHtml(html: string) {
+  return html.replace(/<[^>]*>/g, '');
+}
+
+const posts = await getPosts("1");
 ---
 
 <Layout>
@@ -40,48 +52,17 @@ import { Icon } from 'astro-icon/components'
         <div class="max-w-7xl mx-auto mt-32">
             <Title title="Prepararse para una cita" classTitle={"text-left"} positionBar={"bottom"} />
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
-                <div class="relative">
-                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
-                        <Icon name="bars" class="text-white text-2xl" />
-                    </span>
-                    <h3 class="text-xl font-bold pl-20">Confirma los Requisitos del Estudio</h3>
-                    <p class="text-black/70 pl-20 mt-3">Algunos estudios requieren ayuno, evitar ciertos alimentos o suspender medicamentos. Consulta con tu médico.</p>
-                </div>
-                <div class="relative">
-                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
-                        <Icon name="bars" class="text-white text-2xl" />
-                    </span>
-                    <h3 class="text-xl font-bold pl-20">Hidrátate Bien</h3>
-                    <p class="text-black/70 pl-20 mt-3">Beber agua facilita la extracción de sangre y análisis de orina.</p>
-                </div>
-                <div class="relative">
-                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
-                        <Icon name="bars" class="text-white text-2xl" />
-                    </span>
-                    <h3 class="text-xl font-bold pl-20">Informa Sobre tu Medicación</h3>
-                    <p class="text-black/70 pl-20 mt-3">Algunos medicamentos afectan los análisis, avisa al laboratorio.</p>
-                </div>
-                <div class="relative">
-                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
-                        <Icon name="bars" class="text-white text-2xl" />
-                    </span>
-                    <h3 class="text-xl font-bold pl-20">Cumple con el ayuno (si aplica)</h3>
-                    <p class="text-black/70 pl-20 mt-3">Generalmente es de 8 a 12 horas, solo puedes tomar agua.</p>
-                </div>
-                <div class="relative">
-                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
-                        <Icon name="bars" class="text-white text-2xl" />
-                    </span>
-                    <h3 class="text-xl font-bold pl-20">Evita el Alcohol y la Cafeína</h3>
-                    <p class="text-black/70 pl-20 mt-3">Pueden alterar los resultados, evitalos al menos 24 horas antes.</p>
-                </div>
-                <div class="relative">
-                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
-                        <Icon name="bars" class="text-white text-2xl" />
-                    </span>
-                    <h3 class="text-xl font-bold pl-20">Llega con tiempo y relájate</h3>
-                    <p class="text-black/70 pl-20 mt-3">Evita el estrés y la actividad física intensa antes del estudio.</p>
-                </div>
+                {
+                    posts.map((post: Post) => (
+                        <div class="relative">
+                            <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                                <Icon name="bars" class="text-white text-2xl" />
+                            </span>
+                            <h3 class="text-xl font-bold pl-20">{post.title}</h3>
+                            <p class="text-black/70 pl-20 mt-3">{stripHtml(post.content)}</p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     </section>
