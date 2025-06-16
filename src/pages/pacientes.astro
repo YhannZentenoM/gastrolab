@@ -18,7 +18,8 @@ function stripHtml(html: string) {
   return html.replace(/<[^>]*>/g, '');
 }
 
-const posts = await getPosts("1");
+const postsCita = await getPosts("1");
+const postsEnfermedades = await getPosts("3");
 ---
 
 <Layout>
@@ -53,7 +54,7 @@ const posts = await getPosts("1");
             <Title title="Prepararse para una cita" classTitle={"text-left"} positionBar={"bottom"} />
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
                 {
-                    posts.map((post: Post) => (
+                    postsCita.map((post: Post) => (
                         <div class="relative">
                             <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
                                 <Icon name="bars" class="text-white text-2xl" />
@@ -118,7 +119,7 @@ const posts = await getPosts("1");
             <ContainerSearch title="Busca tus resultados" tipo="Paciente" image="doctora.webp" link="https://gastrolab.convenios.ingenius.online/" />
         </div>
     </section>
-    <ListDiseases />
+    <ListDiseases postEnfermedades={postsEnfermedades} />
     <Evaluation />
     <Map heightMap="450" />
 </Layout>

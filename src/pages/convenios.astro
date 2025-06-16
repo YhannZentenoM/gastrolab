@@ -1,9 +1,11 @@
 ---
-import { Icon } from 'astro-icon/components'
 import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
 import ContainerSearch from '../components/ContainerSearch.astro';
 import Map from "../sections/Map.astro";
+import { getPosts } from "../lib/wp";
+
+const posts = await getPosts("4");
 ---
 
 <Layout>
@@ -69,14 +71,9 @@ import Map from "../sections/Map.astro";
     <section class="mt-20">
         <div class="max-w-7xl mx-auto flex items-center gap-5 my-20">
             <div class="w-full md:w-[40%] p-5">
-                <Title title="Envío de muestras GastroLab" classTitle={"text-left"} positionBar={"top"} />
-                <p class="mt-10 text-black/70 text-base">Para garantizar resultados precisos, sigue estos pasos al enviar tus muestras a GastroLab:</p>
-                <ul class="text-base list-decimal text-black/70 pl-5 mt-5">
-                    <li>Consulta los requisitos: Verifica las indicaciones específicas para tu tipo de muestra (sangre, orina, heces, etc.).</li>
-                    <li>Recolección adecuada: Usa los recipientes proporcionados por el laboratorio y sigue las instrucciones de almacenamiento.</li>
-                    <li>Etiqueta correctamente: Asegúrate de identificar la muestra con tu nombre y datos requeridos.</li>
-                    <li>Entrega a tiempo: Lleva la muestra al laboratorio dentro del plazo indicado para evitar alteraciones.</li>
-                </ul>
+                <Title title={posts[0].title} classTitle={"text-left"} positionBar={"top"} />
+                <div class="convenio" set:html={posts[0].content}> 
+                </div>
             </div>
             <div class="w-full md:w-[60%]">
                 <img src="/recursos/envio-muestras.webp" alt="envío de muestras" class="w-full object-contain" />
@@ -87,24 +84,16 @@ import Map from "../sections/Map.astro";
                 <img src="/recursos/resultados.webp" alt="Resultados GastroLab" class="w-full object-contain" />
             </div>
             <div class="w-full md:w-[40%] p-5">
-                <Title title="Resultados GastroLab" classTitle={"text-left"} positionBar={"top"} />
-                <p class="mt-10 text-black/70 text-base">Obtener tus resultados es fácil y seguro:</p>
-                <ul class="text-base list-decimal text-black/70 pl-5 mt-5">
-                    <li>Tiempo de entrega: Consulta el plazo estimado según tu prueba.</li>
-                    <li>Canales de entrega: Recibe tus resultados por correo electrónico, en nuestra plataforma en línea o de forma presencial.</li>
-                    <li>Confidencialidad garantizada: Solo tú o una persona autorizada podrán acceder a los resultados.</li>
-                </ul>
+                <Title title={posts[1].title} classTitle={"text-left"} positionBar={"top"} />
+                <div class="convenio" set:html={posts[1].content}> 
+                </div>
             </div>
         </div> 
         <div class="max-w-7xl mx-auto flex items-center gap-5 my-20">
             <div class="w-full md:w-[40%] p-5">
-                <Title title="Precios corporativos especiales en GastroLab" classTitle={"text-left"} positionBar={"top"} />
-                <p class="mt-10 text-black/70 text-base">En GastroLab, ofrecemos tarifas preferenciales para empresas, clínicas y grupos, garantizando estudios de calidad con precios accesibles.</p>
-                <ul class="text-base list-decimal text-black/70 pl-5 mt-5">
-                    <li>Planes personalizados según tus necesidades.</li>
-                    <li>Descuentos por volumen de pruebas.</li>
-                    <li>Resultados rápidos y confidenciales.</li>
-                </ul>
+                <Title title={posts[2].title} classTitle={"text-left"} positionBar={"top"} />
+                <div class="convenio" set:html={posts[2].content}> 
+                </div>
             </div>
             <div class="w-full md:w-[60%]">
                 <img src="/recursos/precios-corporativos.webp" alt="Precios corporativos especiales en GastroLab" class="w-full object-contain" />
@@ -113,3 +102,16 @@ import Map from "../sections/Map.astro";
     </section>
     <Map heightMap="450" />
 </Layout>
+
+<style is:inline>
+    .convenio p{
+        font-size: 16px;
+        margin-top: 2.5rem;
+    }
+    .convenio ul{
+        font-size: 16px;
+        margin-top: 1.25rem;
+        list-style: decimal;
+        padding-left: 1.25rem;
+    }
+</style>
