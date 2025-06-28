@@ -12,6 +12,7 @@
 
   // Mostrar automáticamente si no fue aceptado aún
   if (!localStorage.getItem('cookiesAccepted')) {
+    console.log("first")
     banner.classList.remove('hidden');
   }
 
@@ -19,6 +20,7 @@
   document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       if (!localStorage.getItem('cookiesAccepted')) {
+        console.log("second")
         banner.classList.remove('hidden');
       }
     });
@@ -29,4 +31,5 @@
     banner.classList.add('hidden');
     localStorage.setItem('cookiesAccepted', 'true');
   });
+  console.log("thhrit")
 </script>
