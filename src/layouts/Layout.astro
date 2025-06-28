@@ -6,6 +6,7 @@ import '@fontsource-variable/montserrat';
 import "../styles/global.css";
 import Footer from "../sections/Footer.astro";
 import AvisoCookies from "../components/AvisoCookies.astro";
+import ModalLogin from "../components/ModalLogin.astro";
 ---
 <!doctype html>
 <html lang="es">
@@ -19,6 +20,7 @@ import AvisoCookies from "../components/AvisoCookies.astro";
 	<body>
 		<Navbar />
 		<slot />
+		<ModalLogin />
 		<Footer />
 		<AvisoCookies />
 	</body>

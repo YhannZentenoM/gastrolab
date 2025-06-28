@@ -1,0 +1,44 @@
+<!-- Modal (solo hidden por defecto) -->
+<div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
+  <div class="bg-white w-full max-w-sm rounded-lg shadow-lg relative p-6">
+    <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl font-bold">&times;</button>
+    <h2 class="text-xl font-semibold mb-4 text-center">Iniciar Sesión</h2>
+    <form class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+        <input type="email" class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <input type="password" class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Ingresar</button>
+    </form>
+  </div>
+</div>
+
+<script type="module">
+  const modal = document.getElementById('login-modal');
+  const closeModal = document.getElementById('close-modal');
+  const openButtons = document.querySelectorAll('.open-modal');
+
+  // Mostrar el modal
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex'); // ✅ agregamos flex dinámicamente
+    });
+  });
+
+  // Cerrar modal con X o clic afuera
+  function cerrarModal() {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  }
+
+  closeModal.addEventListener('click', cerrarModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) cerrarModal();
+  });
+</script>
