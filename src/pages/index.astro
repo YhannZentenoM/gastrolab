@@ -5,14 +5,20 @@ import WorksHome from '../sections/WorksHome.astro';
 import AboutHome from '../sections/AboutHome.astro';
 import ServicesHome from '../sections/ServicesHome.astro';
 import Map from '../sections/Map.astro';
+import CardsHome from '../components/CardsHome.astro';
+import News from '../sections/News.astro';
+import Blog from '../sections/Blog.astro';
 ---
 
 <Layout>
 	<section class="w-full h-[40vh] md:h-[75vh]">
 		<div class={`h-full w-full bg-[url("/recursos/labo.webp")] bg-cover`}></div>
 	</section>
-	<WorksHome />
+	<CardsHome />
 	<AboutHome />
-	<ServicesHome />
+	<News />
+	<Blog />
+	<!-- <ServicesHome /> -->
+	<WorksHome />
 	<Map heightMap='450' />
 </Layout>

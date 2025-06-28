@@ -8,6 +8,8 @@ import Pills from "../components/Pills.astro";
 import ContainerSearch from "../components/ContainerSearch.astro";
 import { Icon } from 'astro-icon/components'
 import { getPosts } from "../lib/wp";
+import Resources from "../sections/Resources.astro";
+import Blog from "../sections/Blog.astro";
 
 interface Post {
   title: string;
@@ -116,6 +118,8 @@ const postsEnfermedades = await getPosts("3");
                 <Pills title="Pruebas a la Carta" description="Busque aquí su examen ordenado por sección." image="condicion.webp" link="" id="" sizeImg="h-20 md:h-40" />
                 <Pills title="Chequeo Anual" description="Busque aquí su examen ordenado por exámen." image="examen.webp" link="" id="" sizeImg="h-20 md:h-40" />
             </div>
+            <Blog />
+            <Resources />
             <ContainerSearch title="Busca tus resultados" tipo="Paciente" image="doctora.webp" link="https://gastrolab.convenios.ingenius.online/" />
         </div>
     </section>

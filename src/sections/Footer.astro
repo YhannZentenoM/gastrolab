@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components'
 ---
 
 <footer class="w-full bg-secondary pt-20 pb-5 px-5 md:px-0">
@@ -18,13 +19,21 @@ import { Image } from "astro:assets";
         </div>
         <div class="text-white">
             <h3 class="uppercase text-sm font-bold relative pb-3 after:absolute after:w-[7%] after:h-1 after:bg-primary after:left-0 after:bottom-0">Horario de atención</h3>
-            <ul class="mt-10 text-sm">
+            <ul class="mt-6 text-sm">
                 <li>Lunes a Viernes: 8:00 am - 5.00 pm</li>
+            </ul>
+            <h3 class="mt-10 uppercase text-sm font-bold relative pb-3 after:absolute after:w-[7%] after:h-1 after:bg-primary after:left-0 after:bottom-0">Redes Sociales</h3>
+            <ul class="mt-6 text-sm">
+                <li>
+                    <a href="https://www.facebook.com/gastrolabperu" target="_blank" class="group ">
+                        <Icon name="facebook" class="w-7 h-7 text-white group-hover:scale-110 transition-transform duration-300" />
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="text-white">
-            <h3 class="uppercase text-sm font-bold relative pb-3 after:absolute after:w-[7%] after:h-1 after:bg-primary after:left-0 after:bottom-0">Contáctenos</h3>
-            <ul class="mt-10 text-sm">
+            <h3 class="uppercase text-sm font-bold relative pb-3 after:absolute after:w-[7%] after:h-1 after:bg-primary after:left-0 after:bottom-0">Cómo Contactarse Con Nosotros</h3>
+            <ul class="mt-6 text-sm">
                 <li>Dirección: Av. El Polo 740, Of. C-414, C.C. El Polo, Surco, Lima.</li>
                 <li>Email: <a href="mailto:info@gastrolabperu.com">info@gastrolabperu.com</a></li>
                 <li>WhatsApp: <a href="tel:+51988801315">+51 988 801 315</a></li>
@@ -32,7 +41,18 @@ import { Image } from "astro:assets";
             </ul>
         </div>
     </div>
-    <div class="pt-5 border border-t-white/30 mt-20 text-center">
-        <p class="text-white/50 text-xs">Desarrollado por: <a class="font-semibold" href="https://www.sietemedios.com/" target="_blank">Siete Medios</a></p>
+    <div class="max-w-7xl mx-auto pt-5 border border-t-white/30 mt-20 text-center flex justify-between items-center">
+        <p class="text-white/70 text-sm font-light">Desarrollado por: <a class="font-semibold" href="https://www.sietemedios.com/" target="_blank">Siete Medios</a></p>
+        <ul class="inline-flex text-white/90 text-sm divide-x divide-white/40 font-light">
+            <li class="pr-5 hover:text-white transition-colors duration-300">
+                <a href="">Aviso Sobre Cookies</a>
+            </li>
+            <li class="px-5 hover:text-white transition-colors duration-300">
+                <a href="">Política de Privacidad</a>
+            </li>
+            <li class="pl-5 hover:text-white transition-colors duration-300">
+                <a href="">Libro de Reclamaciones</a>
+            </li>
+        </ul>
     </div>
 </footer>

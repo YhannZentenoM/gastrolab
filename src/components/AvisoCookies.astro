@@ -1,0 +1,36 @@
+<!-- Aviso de Cookies -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-gray-800 text-white text-sm p-4 flex items-center justify-between hidden z-50">
+  <div>
+    Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href="/politica-de-cookies" class="underline">política de cookies</a>.
+  </div>
+  <button id="close-banner" class="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded">Aceptar</button>
+</div>
+
+<!-- Ejemplo de enlaces -->
+<a href="#seccion1" class="text-blue-600 underline block mt-10">Ir a sección 1</a>
+<a href="#seccion2" class="text-blue-600 underline block mt-2">Ir a sección 2</a>
+
+<script is:inline>
+  const banner = document.getElementById('cookie-banner');
+  const closeBtn = document.getElementById('close-banner');
+
+  // Mostrar automáticamente si no fue aceptado aún
+  if (!localStorage.getItem('cookiesAccepted')) {
+    banner.classList.remove('hidden');
+  }
+
+  // También mostrar si se hace clic en cualquier enlace (opcional)
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (!localStorage.getItem('cookiesAccepted')) {
+        banner.classList.remove('hidden');
+      }
+    });
+  });
+
+  // Al hacer clic en "Aceptar"
+  closeBtn.addEventListener('click', () => {
+    banner.classList.add('hidden');
+    localStorage.setItem('cookiesAccepted', 'true');
+  });
+</script>

@@ -3,6 +3,9 @@ import ContainerSearch from "../components/ContainerSearch.astro";
 import Pills from "../components/Pills.astro";
 import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
+import Blog from "../sections/Blog.astro";
+import Evaluation from "../sections/Evaluation.astro";
+import Resources from "../sections/Resources.astro";
 import Map from "../sections/Map.astro";
 
 import { Icon } from 'astro-icon/components'
@@ -16,8 +19,8 @@ import { Icon } from 'astro-icon/components'
         <div class="max-w-7xl mx-auto">
             <Title title="Busca tus pruebas" classTitle={"text-center"} positionBar={"center"} />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-20">
-                <Pills id="" title="Por condición" description="Busque aquí su examen ordenado por condición." image="condicion.webp" link="/buscador" sizeImg="h-20 md:h-40" />
                 <Pills id="" title="Por Enfermedad" description="Busque aquí su examen ordenado por enfermedad." image="enfermedad.webp" link="/buscador" sizeImg="h-20 md:h-40" />
+                <Pills id="" title="Por síndrome" description="Busque aquí su examen ordenado por síndrome." image="condicion.webp" link="/buscador" sizeImg="h-20 md:h-40" />
             </div>
             <ContainerSearch title="Busqueda de pruebas por orden alfabético" tipo="Médico" image="doctora-rubia.webp" link="/buscador" />
         </div>
@@ -49,5 +52,8 @@ import { Icon } from 'astro-icon/components'
             />
         </div>
     </section>
+    <Blog />
+    <Resources />
+    <Evaluation />
     <Map heightMap="450" />
 </Layout>
