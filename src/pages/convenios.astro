@@ -4,13 +4,19 @@ import Layout from "../layouts/Layout.astro";
 import ContainerSearch from '../components/ContainerSearch.astro';
 import Map from "../sections/Map.astro";
 import { getPosts } from "../lib/wp";
+import FormRegisterConvenios from "../components/FormRegisterConvenios.astro";
+import ContactMail from "../sections/ContactMail.astro";
 
 const posts = await getPosts("4");
 ---
 
 <Layout>
-    <section class="w-full h-[65vh]">
-        <div class={`h-full w-full bg-[url('/recursos/convenios-portada.webp')] bg-cover`}></div>
+    <section class="w-full h-auto md:h-[70vh]">
+        <div class={`flex items-center justify-center h-full w-full bg-[url('/recursos/convenios-portada.webp')] bg-cover p-5 md:p-0`}>
+            <div class="max-w-5xl mx-auto w-full">
+                <FormRegisterConvenios />
+            </div>
+        </div>
     </section>
     <section class="w-full bg-[url('/recursos/background-convenios.webp')] bg-cover">
         <div class="max-w-7xl mx-auto px-10 py-24 grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -65,7 +71,7 @@ const posts = await getPosts("4");
     </section> -->
     <section class="mt-20">
         <div class="max-w-6xl mx-auto">
-            <ContainerSearch title="Busqueda de pruebas por orden alfabético" tipo="Médico" image="doctora.webp" link="/buscador" />
+            <ContainerSearch title="Busqueda de pruebas por orden alfabético" tipo="Médico" image="doctora.webp" link="/buscador" modal={false} />
         </div>
     </section>
     <section class="mt-20">
@@ -100,6 +106,7 @@ const posts = await getPosts("4");
             </div>
         </div> 
     </section>
+    <ContactMail />
     <Map heightMap="450" />
 </Layout>
 

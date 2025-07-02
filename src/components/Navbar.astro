@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components'
 const pathname = Astro.url.pathname;
 
 ---
-<header class="w-full sticky top-0 z-10 bg-white">
+<header class="w-full sticky top-0 z-20 bg-white">
 	<nav class="max-w-7xl mx-auto h-24 flex items-center justify-between px-5 md:px-0">
 		<a href="/">
 			<img
@@ -28,7 +28,7 @@ const pathname = Astro.url.pathname;
 				<a href="#" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "#" && "bg-primary text-white"}`}>Registrarse</a>
 			</li>
 			<li>
-				<button type="button" class={`open-modal hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "#" && "bg-primary text-white"}`}>Log in</button>
+				<button type="button" class={`open-modal cursor-pointer hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "#" && "bg-primary text-white"}`}>Log in</button>
 			</li>
 			<li>
 				<a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/#" && "bg-primary text-white"}`}>Resultados</a>

@@ -10,6 +10,8 @@ import { Icon } from 'astro-icon/components'
 import { getPosts } from "../lib/wp";
 import Resources from "../sections/Resources.astro";
 import Blog from "../sections/Blog.astro";
+import FormRegisterPaciente from "../components/FormRegisterPaciente.astro";
+import ContactMail from "../sections/ContactMail.astro";
 
 interface Post {
   title: string;
@@ -25,10 +27,14 @@ const postsEnfermedades = await getPosts("3");
 ---
 
 <Layout>
-    <section class="w-full h-[30vh] md:h-[65vh]">
-        <div class={`h-full w-full bg-[url('/recursos/pacientes-portada.webp')] bg-cover`}></div>
+    <section class="w-full h-auto md:h-[70vh]">
+        <div class={`flex items-center justify-center h-full w-full bg-[url('/recursos/pacientes-portada.webp')] bg-cover p-5 md:p-0`}>
+            <div class="max-w-5xl mx-auto w-full">
+                <FormRegisterPaciente />
+            </div>
+        </div>
     </section>
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 -mt-40">
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 mt-10 md:-mt-40">
         <div class="bg-primary h-80 flex flex-col justify-center items-center">
             <div class="max-w-[200px]">
                 <Icon name="tubo_ensayo" class="text-white text-6xl" />
@@ -36,13 +42,13 @@ const postsEnfermedades = await getPosts("3");
                 <a href="https://gastrolab.citas.ingenius.online" target="_blank" class="text-xs font-bold text-primary bg-white border border-primary rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary hover:text-white hover:border hover:border-white">Clic aquí</a>
             </div>
         </div>
-        <div class="bg-primary-light h-80 flex flex-col justify-center items-center">
+        <!-- <div class="bg-primary-light h-80 flex flex-col justify-center items-center">
             <div class="max-w-[200px]">
                 <Icon name='result' class="text-white text-6xl" />
                 <h3 class="text-3xl font-semibold text-white mb-3">Ver resultados</h3>
                 <a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="text-xs font-bold text-primary-light border border-primary-light bg-white rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary-light hover:text-white hover:border hover:border-white">Clic aquí</a>
             </div>
-        </div>
+        </div> -->
         <div class="bg-red-500/95 h-80 flex flex-col justify-center items-center">
             <div class="max-w-[200px]">
                 <Icon name="calendar_cancel" class="text-white text-6xl" />
@@ -115,12 +121,13 @@ const postsEnfermedades = await getPosts("3");
         <div class="max-w-7xl mx-auto">
             <Title title="Pruebas a la carta y chequeo anual" classTitle={"text-center"} positionBar={"center"} />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-20">
-                <Pills title="Pruebas a la Carta" description="Busque aquí su examen ordenado por sección." image="condicion.webp" link="" id="" sizeImg="h-20 md:h-40" />
-                <Pills title="Chequeo Anual" description="Busque aquí su examen ordenado por exámen." image="examen.webp" link="" id="" sizeImg="h-20 md:h-40" />
+                <Pills title="Pruebas a la Carta" description="Busque aquí su examen ordenado por sección." image="condicion.webp" link="" id="" sizeImg="h-20 md:h-40" modal={true} />
+                <Pills title="Chequeo Anual" description="Busque aquí su examen ordenado por exámen." image="examen.webp" link="" id="" sizeImg="h-20 md:h-40" modal={true} />
             </div>
             <Blog />
             <Resources />
-            <ContainerSearch title="Busca tus resultados" tipo="Paciente" image="doctora.webp" link="https://gastrolab.convenios.ingenius.online/" />
+            <ContactMail />
+            <ContainerSearch title="Busca tus resultados" tipo="Paciente" image="doctora.webp" link="#" modal={true} />
         </div>
     </section>
     <ListDiseases postEnfermedades={postsEnfermedades} />

@@ -1,19 +1,54 @@
+---
+const { title, idModal } = Astro.props;
+---
+
 <!-- Modal (solo hidden por defecto) -->
-<div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
-  <div class="bg-white w-full max-w-sm rounded-lg shadow-lg relative p-6">
-    <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl font-bold">&times;</button>
-    <h2 class="text-xl font-semibold mb-4 text-center">Iniciar Sesión</h2>
-    <form class="space-y-4">
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-        <input type="email" class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+<div id="login-modal" class="fixed inset-0 bg-[conic-gradient(at_top_right,rgba(204,249,223,0.8),rgba(209,214,255,0.8))] items-center justify-center z-50 hidden">
+  <div class="bg-white w-full max-w-md rounded-lg shadow-lg relative p-6">
+    <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+    <div class="relative max-w-lg md:mx-auto mx-6 w-full flex flex-col justify-center bg-white rounded-lg p-6">
+            <div class="text-start mb-7">
+                <a class="grow block mb-8" href="/">
+                    <img class="h-16 mx-auto" src="/logo.svg" alt="images">
+                </a>
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold text-dark text-primary-light mb-1">Regístrate para</h3>
+                    <p class="text-lg font-medium text-primary">acceder a esta sección</p>
+                </div>
+            </div>
+
+            <form class="text-start w-full">
+              <div class="mb-4">
+                  <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Correo electrónico</label>
+                  <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base" type="email" placeholder="Ingresa tu correo electrónico">
+              </div>
+              <div class="mb-4">
+                  <label for="password-addon" class="block text-base font-semibold text-dark mb-2">Contraseña</label>
+                  <div class="flex">
+                      <input type="password" id="password-addon" class="form-password text-dark text-base font-medium block w-full rounded-s-md py-2.5 px-4 border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base" placeholder="Ingresa tu contraseña">
+                      <button type="button" data-hs-toggle-password="{&quot;target&quot;: &quot;#password-addon&quot;}" class="inline-flex items-center justify-center py-2.5 px-4 border rounded-e-md -ms-px border-gray-300">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye hs-password-active:hidden h-5 w-5 text-dark"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye-off" class="lucide lucide-eye-off hidden hs-password-active:block h-5 w-5 text-dark"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" x2="22" y1="2" y2="22"></line></svg>
+                      </button>
+                  </div>
+              </div>
+
+              <!-- <div class="flex justify-between items-center flex-wrap gap-x-1 gap-y-2 mb-6 mt-3">
+                  <div class="inline-flex items-center">
+                      <input type="checkbox" id="checkbox-signin" class="h-4 w-4 text-base rounded border-gray-300 text-dark focus:ring focus:ring-default-950/30 focus:ring-offset-0">
+                      <label class="text-base ms-2 text-light font-medium align-middle select-none" for="checkbox-signin">Remember me</label>
+                  </div>
+                  <a class="text-base text-dark" href="/tailwind/authea/auth-recoverpw"><small>Forgot your password?</small></a>
+              </div> -->
+
+              <div class="text-center mb-7">
+                  <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-2.5 bg-primary font-bold text-base  text-white rounded-md transition-all duration-500">Ingresar </button>
+              </div>
+              
+              <p class="shrink text-light text-center">No tengo una cuenta? <a class="text-dark font-semibold ms-1" href="/"><b>Registro</b></a></p>
+          </form>
       </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Contraseña</label>
-        <input type="password" class="mt-1 w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-      </div>
-      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Ingresar</button>
-    </form>
+    <slot />
   </div>
 </div>
 

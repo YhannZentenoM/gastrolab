@@ -7,23 +7,44 @@ import Blog from "../sections/Blog.astro";
 import Evaluation from "../sections/Evaluation.astro";
 import Resources from "../sections/Resources.astro";
 import Map from "../sections/Map.astro";
+import FormRegisterMedico from "../components/FormRegisterMedico.astro";
 
 import { Icon } from 'astro-icon/components'
+import ContactMail from "../sections/ContactMail.astro";
 ---
 
 <Layout>
-    <section class="w-full h-[30vh] md:h-[65vh]">
-        <div class="h-full w-full bg-[url('/recursos/medicos.webp')] bg-cover"></div>
+    <section class="w-full h-auto md:h-[70vh]">
+        <div class="flex items-center justify-center h-full w-full bg-[url('/recursos/medicos.webp')] bg-cover p-5 md:p-0">
+            <div class="max-w-5xl mx-auto w-full">
+                <FormRegisterMedico />
+            </div>
+        </div>
     </section>
     <section class="mt-32 px-5 md:px-0">
         <div class="max-w-7xl mx-auto">
             <Title title="Busca tus pruebas" classTitle={"text-center"} positionBar={"center"} />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-20">
-                <Pills id="" title="Por Enfermedad" description="Busque aquí su examen ordenado por enfermedad." image="enfermedad.webp" link="/buscador" sizeImg="h-20 md:h-40" />
-                <Pills id="" title="Por síndrome" description="Busque aquí su examen ordenado por síndrome." image="condicion.webp" link="/buscador" sizeImg="h-20 md:h-40" />
+                <Pills id="" title="Por Enfermedad" description="Busque aquí su examen ordenado por enfermedad." image="enfermedad.webp" link="/buscador" sizeImg="h-20 md:h-40" modal={false} />
+                <Pills id="" title="Por Síndrome" description="Busque aquí su examen ordenado por síndrome." image="condicion.webp" link="/buscador" sizeImg="h-20 md:h-40" modal={false} />
             </div>
-            <ContainerSearch title="Busqueda de pruebas por orden alfabético" tipo="Médico" image="doctora-rubia.webp" link="/buscador" />
+            <ContainerSearch title="Busqueda de pruebas por orden alfabético" tipo="Médico" image="doctora-rubia.webp" link="/buscador" modal={false} />
         </div>
+    </section>
+    <section class="mt-20">
+        <div class="max-w-7xl mx-auto flex items-center gap-5 my-20">
+            <div class="w-full md:w-[40%] p-5">
+                <Title title={'Pruebas nuevas o actualizadas'} classTitle={"text-left"} positionBar={"top"} />
+                <div class="mt-10" set:html={'Descubre las últimas pruebas incorporadas en nuestro laboratorio. En Gastrolab estamos en constante innovación para ofrecerte diagnósticos más precisos, rápidos y confiables.'}> 
+                </div>
+                <a href="/buscador" class="block max-w-32 mt-5 cursor-pointer text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary text-center drop-shadow-xl drop-shadow-primary/30">
+                    Clic aquí
+                </a>
+            </div>
+            <div class="w-full md:w-[60%]">
+                <img src="/recursos/nuevas-pruebas.webp" alt="Pruebas nuevas o actualizadas" class="w-full object-contain" />
+            </div>
+        </div> 
     </section>
     <section>
         <div class="max-w-7xl mx-auto my-32 flex flex-col md:flex-row items-end justify-center gap-10">
@@ -32,14 +53,16 @@ import { Icon } from 'astro-icon/components'
                     <div class="max-w-[200px]">
                         <Icon name="result" class="text-white text-6xl" />
                         <h3 class="text-3xl font-semibold text-white mb-3">Ver resultados</h3>
-                        <a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="text-xs font-bold text-primary bg-white border border-primary rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary hover:text-white hover:border hover:border-white">Clic aquí</a>
+                        <!-- <a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="text-xs font-bold text-primary bg-white border border-primary rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary hover:text-white hover:border hover:border-white">Clic aquí</a> -->
+                        <a class="open-modal text-xs font-bold text-primary bg-white border border-primary rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary hover:text-white hover:border hover:border-white">Clic aquí</a>
                     </div>
                 </div>
                 <div class="bg-primary-light h-80 flex flex-col justify-center items-center w-full open-modal">
                     <div class="max-w-[200px]">
                         <Icon name="tubo_ensayo" class="text-white text-6xl" />
                         <h3 class="text-3xl font-semibold text-white mb-3">Ordenar pruebas</h3>
-                        <a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="text-xs font-bold text-primary-light border border-primary-light bg-white rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary-light hover:text-white hover:border hover:border-white">Clic aquí</a>
+                        <!-- <a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="text-xs font-bold text-primary-light border border-primary-light bg-white rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary-light hover:text-white hover:border hover:border-white">Clic aquí</a> -->
+                        <span class="open-modal text-xs font-bold text-primary-light border border-primary-light bg-white rounded-full px-7 py-3 transition-colors duration-300 uppercase block w-32 hover:bg-primary-light hover:text-white hover:border hover:border-white">Clic aquí</span>
                     </div>
                 </div>
             </div>
@@ -54,6 +77,7 @@ import { Icon } from 'astro-icon/components'
     </section>
     <Blog />
     <Resources />
+    <ContactMail />
     <Evaluation />
     <Map heightMap="450" />
 </Layout>

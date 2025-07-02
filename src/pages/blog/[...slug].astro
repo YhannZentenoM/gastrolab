@@ -1,0 +1,49 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TitleBar from "../../sections/TitleBar.astro";
+
+const capitalize = (str: string) => 
+  str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+const { slug } = Astro.params;
+const title = capitalize(slug?.split("-").join(" ") || "");
+---
+
+<Layout>
+    <TitleBar title={title} />
+    <section class="max-w-7xl mx-auto px-5 py-32 md:px-0">
+        <div class="grid grid-cols-3 gap-10">
+            <div class="col-span-2">
+                <img src="https://themes.webdevia.com/laboratory/wp-content/uploads/2016/11/doc-labwork-1.jpg" alt="Title of Single Post with Image I" class="w-full object-contain">
+                <p class="mt-10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus rerum suscipit soluta fuga iste reiciendis, illum praesentium voluptate voluptas quibusdam delectus ratione neque nulla corrupti iure in eligendi odit quae. Numquam sed quia tenetur animi veniam. Earum perferendis atque repellat corrupti cum rerum reprehenderit eum dicta quasi provident id, fugiat ratione culpa est rem veritatis illum. Ipsa facilis hic error earum officiis consectetur expedita est, sequi corrupti debitis, molestiae excepturi! Minima reprehenderit consequatur, at recusandae natus saepe minus dolore id nihil atque in amet? Eum, illo harum consectetur totam iusto autem cumque adipisci dicta ab reprehenderit vel. Omnis, provident deleniti.</p>
+                <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus corporis mollitia, quae iusto eaque omnis voluptate fugit atque culpa vero. Officia, ea! Debitis repudiandae facilis, adipisci perspiciatis quaerat accusamus. Eos repudiandae quis suscipit sed eaque.</p>
+                <p class="mt-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur consectetur corporis provident autem ipsa sint minima delectus iure vero, accusantium reiciendis quos deleniti repellendus nihil exercitationem animi ullam non quam voluptatem, inventore unde consequuntur voluptates deserunt aliquam? Ipsam dolor quo distinctio doloribus consequatur. Ad quasi voluptas voluptatem debitis et assumenda, maiores tempore explicabo quod tempora? Blanditiis sed veniam deserunt. Laudantium quod eius, optio fuga quis iure tempore voluptatem in sit illo, libero aliquid voluptas, odio mollitia pariatur debitis qui facilis.</p>
+            </div>
+            <div class="space-y-10 col-span-1">
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold mb-3">Post recientes</h3>
+                    <ul class="list-disc list-inside">
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Post de blog 1</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Post de blog 2</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Post de blog 3</a></li>
+                    </ul>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold mb-3">Categorías</h3>
+                    <ul class="list-disc list-inside">
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 1</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 2</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 3</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 4</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 5</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 6</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 7</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 8</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 9</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 10</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

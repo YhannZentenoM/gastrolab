@@ -6,10 +6,11 @@ interface Props {
     image: string;
     link: string;
     sizeImg: string;
+    modal: boolean
 }
-const { id, title, description, image, link = '#', sizeImg = 'h-40' } = Astro.props;
+const { id, title, description, image, link = '#', sizeImg = 'h-40', modal = false } = Astro.props;
 ---
-<button class="bg-primary rounded-4xl flex justify-between items-center py-5 px-4 md:px-14 group hover:drop-shadow-primary-card transition-all duration-500" id={id}>
+<button class={`bg-primary rounded-4xl flex justify-between items-center py-5 px-4 md:px-14 group hover:drop-shadow-primary-card transition-all duration-500 ${modal && 'open-modal'}`} id={id}> 
     <img src={`/recursos/${image}`} alt={title} class={`${sizeImg} group-hover:scale-110 transition-all duration-300`} />
     <div class="text-white w-full text-right">
         <h3 class="text-2xl md:text-4xl font-semibold mb-1">{title}</h3>

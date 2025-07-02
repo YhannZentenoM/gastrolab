@@ -1,0 +1,26 @@
+---
+import Title from "../components/Title.astro";
+---
+
+<section class="py-10 px-5 md:px-0">
+    <div class="max-w-7xl mx-auto p-6">
+        <Title title="Contáctanos" classTitle={"text-left"} positionBar={"top"} />
+        <!-- <div class="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
+            <input class="w-full mt-2 p-3 rounded-lg border-gray-200 text-gray-950 bg-gray-50 focus:outline-none focus:border-gray-300 focus:ring-transparent" type="text" placeholder="First Name">
+            <input class="w-full mt-2 p-3 rounded-lg border-gray-200 text-gray-950 bg-gray-50 focus:outline-none focus:border-gray-300 focus:ring-transparent" type="text" placeholder="Last Name">
+            <input class="w-full mt-2 p-3 rounded-lg border-gray-200 text-gray-950 bg-gray-50 focus:outline-none focus:border-gray-300 focus:ring-transparent" type="email" placeholder="Email">
+            <input class="w-full mt-2 p-3 rounded-lg border-gray-200 text-gray-950 bg-gray-50 focus:outline-none focus:border-gray-300 focus:ring-transparent" type="number" placeholder="Phone">
+        </div> -->
+        <div class="my-4">
+            <textarea placeholder="Ingresa tu mensaje" class="w-full h-32 mt-2 p-3 rounded-lg border border-gray-200 text-gray-950 bg-gray-50 focus:outline-none focus:border-gray-300 focus:ring-transparent"></textarea>
+        </div>
+        <div class="my-2 flex justify-center gap-x-2">
+            <button class="cursor-pointer text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary text-center drop-shadow-xl drop-shadow-primary/30">
+                Enviar por whatsapp
+            </button>
+            <button class="cursor-pointer text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary text-center drop-shadow-xl drop-shadow-primary/30">
+                Enviar por correo electrónico
+            </button>
+        </div>
+    </div>
+</section>

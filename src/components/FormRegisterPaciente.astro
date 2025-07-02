@@ -1,0 +1,52 @@
+<!-- Nombre , Apellido, DNI, Fecha de nacimiento, Correo electrónico, sexo y número de celular -->
+<form action="" class="flex flex-col md:flex-row items-stretch">
+    <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3 flex-1 bg-white rounded-3xl p-5 z-10">
+        <div>
+            <label class="sr-only" for="name">Nombres</label>
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu nombre" type="text" id="name">
+        </div>
+        <div>
+            <label class="sr-only" for="name">Apellidos</label>
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu apellido" type="text" id="name">
+        </div>
+        <div>
+            <label class="sr-only" for="name">Correo electrónico</label>
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu correo electrónico" type="email" id="name">
+        </div>
+        <div>
+            <label class="sr-only" for="email">Documento de Identidad</label>
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu DNI" type="email" id="email">
+        </div>
+        <div>
+            <label class="sr-only" for="phone">Fecha de nacimiento</label>
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" type="date" id="phone">
+        </div>
+        <div>
+            <label class="sr-only" for="phone">Celular</label>
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu número de celular" type="tel" id="phone">
+        </div>
+        <div>
+            <input class="peer sr-only" id="option1" type="radio" tabindex="-1" name="option">
+            <label for="option1" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
+                <span class="text-sm">Masculino</span>
+            </label>
+        </div>
+        <div>
+            <input class="peer sr-only" id="option2" type="radio" tabindex="-1" name="option">
+
+            <label for="option2" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
+                <span class="text-sm">Femenino</span>
+            </label>
+        </div>
+        <div>
+            <input class="peer sr-only" id="option3" type="radio" tabindex="-1" name="option">
+
+            <label for="option3" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
+                <span class="text-sm">Otros</span>
+            </label>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="cursor-pointer md:-ml-5 inline-block h-full rounded-3xl md:rounded-tr-3xl md:rounded-br-3xl sm:w-auto w-full pl-5 md:pl-10 pr-5 py-3 font-medium text-white bg-primary hover:bg-primary-light transition-color duration-300">Registrarse</button>
+    </div>
+</form>
