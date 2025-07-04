@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { EXAMENES_NOMBRE } from '../data/enfermedadesNombre';
+import ModalPruebas from './ModalPruebas';
 
-const TablaExamenes = (examenes) => {
+const TablaExamenes = ({ examenes }) => {
   const mitad = Math.ceil(examenes.length / 2);
   const primeraMitad = examenes.slice(0, mitad);
   const segundaMitad = examenes.slice(mitad);
+
+  const [isActive, setIsActive] = useState(false);
+  const [itemData, setItemData] = useState(null);
 
   const renderTabla = (datos) => (
     <table>
@@ -18,7 +22,11 @@ const TablaExamenes = (examenes) => {
         {datos.map((item, idx) => (
           <tr
             key={idx}
-            className='border-b border-black/10'
+            className='border-b border-black/10 cursor-pointer hover:bg-zinc-100 transition-colors duration-300'
+            onClick={() => {
+              setIsActive(true);
+              setItemData(item);
+            }}
           >
             <td className='text-sm text-black/70 py-3 px-5'>{item.code}</td>
             <td className='text-sm text-black/70 py-3 px-5'>{item.name}</td>
@@ -32,6 +40,11 @@ const TablaExamenes = (examenes) => {
     <div className='flex flex-col md:flex-row w-full'>
       <div className='flex-1'>{renderTabla(primeraMitad)}</div>
       <div className='flex-1'>{renderTabla(segundaMitad)}</div>
+      <ModalPruebas
+        info={itemData}
+        isActive={isActive}
+        setIsActive={setIsActive}
+      />
     </div>
   );
 };
@@ -121,7 +134,10 @@ const BuscadorExamenes = () => {
         </div>
       </div>
       <div className='max-w-7xl mx-auto mt-14'>
-        {tipoFilter === 'nombre' && TablaExamenes(EXAMENES_NOMBRE)}
+        {/* {tipoFilter === 'nombre' && TablaExamenes(EXAMENES_NOMBRE)} */}
+        {tipoFilter === 'nombre' && (
+          <TablaExamenes examenes={EXAMENES_NOMBRE} />
+        )}
       </div>
     </>
   );

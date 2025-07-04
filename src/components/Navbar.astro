@@ -25,16 +25,13 @@ const pathname = Astro.url.pathname;
 				<a href="/buscador" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/buscador" && "bg-primary text-white"}`}>Exámenes</a>
 			</li>
 			<li>
-				<a href="#" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "#" && "bg-primary text-white"}`}>Registrarse</a>
-			</li>
-			<li>
-				<button type="button" class={`open-modal cursor-pointer hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "#" && "bg-primary text-white"}`}>Log in</button>
-			</li>
-			<li>
 				<a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/#" && "bg-primary text-white"}`}>Resultados</a>
 			</li>
 			<li>
 				<a href="/contactanos" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/contactanos" && "bg-primary text-white"}`}>Contáctanos</a>
+			</li>
+			<li>
+				<button type="button" class={`open-modal cursor-pointer hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "#" && "bg-primary text-white"}`}>Log in</button>
 			</li>
 		</ul>
 	</nav>
@@ -73,12 +70,6 @@ const pathname = Astro.url.pathname;
 				<a href="/buscador" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Exámenes</a>
 			</li>
 			<li>
-				<a href="#" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Registrarse</a>
-			</li>
-			<li>
-				<a href="#" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Log in</a>
-			</li>
-			<li>
 				<a href="https://gastrolab.convenios.ingenius.online/" target="_blank" class="hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300">Resultados</a>
 			</li>
 			<!-- <li>
@@ -86,6 +77,9 @@ const pathname = Astro.url.pathname;
 			</li> -->
 			<li>
 				<a href="/contactanos" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Contáctanos</a>
+			</li>
+			<li>
+				<a href="#" class="hover:text-white hover:bg-primary rounded-2xl text-lg px-4 py-2 transition-colors duration-300">Log in</a>
 			</li>
 		</ul>
       </nav>
