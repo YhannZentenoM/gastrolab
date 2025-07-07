@@ -1,6 +1,6 @@
 <!-- Modal (solo hidden por defecto) -->
 <div id="login-modal" class="fixed inset-0 bg-[conic-gradient(at_top_right,rgba(204,249,223,0.8),rgba(209,214,255,0.8))] items-center justify-center z-50 hidden">
-  <div class="bg-white w-full max-w-md rounded-lg shadow-lg relative p-6">
+  <div class="bg-white w-full max-w-md rounded-lg shadow-lg relative p-6 max-h-[90vh] overflow-y-auto">
     <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
     <div class="relative max-w-lg md:mx-auto mx-6 w-full flex flex-col justify-center bg-white rounded-lg p-6">
             <div class="text-start mb-7">
@@ -41,28 +41,84 @@
                   <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-2.5 bg-primary font-bold text-base  text-white rounded-md transition-all duration-500">Ingresar </button>
               </div>
               
-              <p class="shrink text-light text-center">No tengo una cuenta? <span class="open-register text-dark font-semibold ms-1"><b>Registro</b></span></p>
+              <p class="shrink text-light text-center">No tengo una cuenta? <span class="open-register cursor-pointer text-dark font-semibold ms-1"><b>Registro</b></span></p>
           </form>
 
           <form class="text-start w-full hidden" id="formRegister">
             <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 col-span-3">
               <div>
-                  <input class="peer sr-only" id="option1" type="radio" tabindex="-1" name="option" checked>
-                  <label for="option1" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
+                  <input class="peer sr-only" id="optionPaciente" type="radio" tabindex="-1" name="option" checked>
+                  <label for="optionPaciente" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
                       <span class="text-sm">Paciente</span>
+                  </label>
+              </div>
+              <div>
+                  <input class="peer sr-only" id="optionMedico" type="radio" tabindex="-1" name="option">
+                  <label for="optionMedico" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
+                      <span class="text-sm">Médico</span>
+                  </label>
+              </div>
+            </div>
+            <div class="my-4">
+              <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Nombres</label> -->
+              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tus nombres">
+            </div>
+            <div class="my-4">
+              <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Apellidos</label> -->
+              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tus apellidos">
+            </div>
+            <div class="my-4">
+              <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Correo electrónico</label> -->
+              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="email" placeholder="Ingresa tu correo electrónico">
+            </div>
+            <div class="my-4">
+              <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Documento de Identidad</label> -->
+              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tu documento de identidad">
+            </div>
+            <div class="my-4">
+              <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Fecha de nacimiento</label> -->
+              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="date" placeholder="Ingresa tu fecha de nacimiento">
+            </div>
+            <div class="my-4">
+              <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Celular</label> -->
+              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tu celular">
+            </div>
+            <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 col-span-3 inputPaciente">
+              <div>
+                  <input class="peer sr-only" id="option1" type="radio" tabindex="-1" name="option">
+                  <label for="option1" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
+                      <span class="text-sm">Masculino</span>
                   </label>
               </div>
               <div>
                   <input class="peer sr-only" id="option2" type="radio" tabindex="-1" name="option">
                   <label for="option2" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
-                      <span class="text-sm">Médico</span>
+                      <span class="text-sm">Femenino</span>
                   </label>
               </div>
             </div>
-            <div class="mb-4">
-              <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Nombres</label>
-              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base" type="email" placeholder="Ingresa tu correo electrónico">
-          </div>
+            <!-- MEDICO -->
+            <div class="my-4">
+              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tus nombres">
+            </div>
+            <div class="my-4">
+              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tus apellidos">
+            </div>
+            <div class="my-4">
+              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="email" placeholder="Ingresa tu correo electrónico">
+            </div>
+            <div class="my-4">
+              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tu celular">
+            </div>
+            <div class="my-4">
+              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tu número de CMP">
+            </div>
+            <div class="my-4">
+              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="email" placeholder="Ingresa tu especialidad">
+            </div>
+            <div class="text-center mt-4">
+              <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-2.5 bg-primary font-bold text-base  text-white rounded-md transition-all duration-500">Ingresar </button>
+            </div>
           </form>
       </div>
     <slot />
@@ -76,11 +132,16 @@
   const openRegister = document.querySelector('.open-register');
   const formLogin = document.getElementById('formLogin');
   const formRegister = document.getElementById('formRegister');
+  const optionPaciente = document.getElementById('optionPaciente');
+  const optionMedico = document.getElementById('optionMedico');
+  const inputPaciente = document.querySelectorAll('.inputPaciente');
+  const inputMedico = document.querySelectorAll('.inputMedico');
 
   // Mostrar el modal
   openButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       console.log(modal)
+      document.body.classList.add('no-scroll');
       modal?.classList.remove('hidden');
       modal?.classList.add('flex'); // ✅ agregamos flex dinámicamente
     });
@@ -90,6 +151,7 @@
   function cerrarModal() {
     modal?.classList.remove('flex');
     modal?.classList.add('hidden');
+    document.body.classList.remove('no-scroll');
   }
 
   closeModal?.addEventListener('click', cerrarModal);
@@ -98,9 +160,30 @@
     if (e.target === modal) cerrarModal();
   });
 
-
   openRegister?.addEventListener('click', () => {
     formRegister?.classList.remove('hidden');
     formLogin?.classList.add('hidden');
+  });
+
+  optionPaciente?.addEventListener('click', () => {
+    inputPaciente.forEach(input => {
+      input.classList.remove('hidden');
+      input.classList.add('block');
+    });
+    inputMedico.forEach(input => {
+      input.classList.add('hidden');
+      input.classList.remove('block');
+    });
+  });
+
+  optionMedico?.addEventListener('click', () => {
+    inputMedico.forEach(input => {
+      input.classList.remove('hidden');
+      input.classList.add('block');
+    });
+    inputPaciente.forEach(input => {
+      input.classList.add('hidden');
+      input.classList.remove('block');
+    });
   });
 </script>
