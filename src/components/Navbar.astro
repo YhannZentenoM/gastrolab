@@ -31,7 +31,7 @@ const pathname = Astro.url.pathname;
 				<a href="/contactanos" class={`hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "/contactanos" && "bg-primary text-white"}`}>Contáctanos</a>
 			</li>
 			<li>
-				<button type="button" class={`open-modal cursor-pointer hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "#" && "bg-primary text-white"}`}>Log in</button>
+				<button type="button" class={`open-modal flex items-center gap-x-1 cursor-pointer hover:text-white hover:bg-primary rounded-2xl px-4 py-2 transition-colors duration-300 ${pathname === "#" && "bg-primary text-white"}`}><Icon name="user" class="text-xl" /> Log in</button>
 			</li>
 		</ul>
 	</nav>
