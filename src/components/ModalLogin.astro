@@ -126,6 +126,7 @@
 </div>
 
 <script>
+  document.addEventListener('astro:page-load', () => {
   const modal = document.getElementById('login-modal');
   const closeModal = document.getElementById('close-modal');
   const openButtons = document.querySelectorAll('.open-modal');
@@ -186,4 +187,5 @@
       input.classList.remove('block');
     });
   });
+})
 </script>
