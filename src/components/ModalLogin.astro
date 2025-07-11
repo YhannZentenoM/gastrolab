@@ -29,16 +29,8 @@
                   </div>
               </div>
 
-              <!-- <div class="flex justify-between items-center flex-wrap gap-x-1 gap-y-2 mb-6 mt-3">
-                  <div class="inline-flex items-center">
-                      <input type="checkbox" id="checkbox-signin" class="h-4 w-4 text-base rounded border-gray-300 text-dark focus:ring focus:ring-default-950/30 focus:ring-offset-0">
-                      <label class="text-base ms-2 text-light font-medium align-middle select-none" for="checkbox-signin">Remember me</label>
-                  </div>
-                  <a class="text-base text-dark" href="/tailwind/authea/auth-recoverpw"><small>Forgot your password?</small></a>
-              </div> -->
-
               <div class="text-center mb-7">
-                  <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-2.5 bg-primary font-bold text-base  text-white rounded-md transition-all duration-500">Ingresar </button>
+                  <button type="submit" id="btn-login" class="w-full inline-flex items-center justify-center px-6 py-2.5 bg-primary font-bold text-base  text-white rounded-md transition-all duration-500">Ingresar </button>
               </div>
               
               <p class="shrink text-light text-center">No tengo una cuenta? <span class="open-register cursor-pointer text-dark font-semibold ms-1"><b>Registro</b></span></p>
@@ -125,67 +117,80 @@
   </div>
 </div>
 
-<script>
+<script is:inline>
   document.addEventListener('astro:page-load', () => {
-  const modal = document.getElementById('login-modal');
-  const closeModal = document.getElementById('close-modal');
-  const openButtons = document.querySelectorAll('.open-modal');
-  const openRegister = document.querySelector('.open-register');
-  const formLogin = document.getElementById('formLogin');
-  const formRegister = document.getElementById('formRegister');
-  const optionPaciente = document.getElementById('optionPaciente');
-  const optionMedico = document.getElementById('optionMedico');
-  const inputPaciente = document.querySelectorAll('.inputPaciente');
-  const inputMedico = document.querySelectorAll('.inputMedico');
+    const modal = document.getElementById('login-modal');
+    const closeModal = document.getElementById('close-modal');
+    const openButtons = document.querySelectorAll('.open-modal');
+    const openRegister = document.querySelector('.open-register');
+    const formLogin = document.getElementById('formLogin');
+    const formRegister = document.getElementById('formRegister');
+    const optionPaciente = document.getElementById('optionPaciente');
+    const optionMedico = document.getElementById('optionMedico');
+    const inputPaciente = document.querySelectorAll('.inputPaciente');
+    const inputMedico = document.querySelectorAll('.inputMedico');
 
-  // Mostrar el modal
-  openButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      console.log(modal)
-      document.body.classList.add('no-scroll');
-      modal?.classList.remove('hidden');
-      modal?.classList.add('flex'); // ✅ agregamos flex dinámicamente
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // SIMULACION DE LOGIN
+
+    const btnLogin = document.getElementById('btn-login');
+
+    btnLogin?.addEventListener('click', () => {
+      localStorage.setItem('loginGastrolab', 'true');
+      cerrarModal();
+      // loginGastrolab()
+      // window.location.reload();
     });
-  });
 
-  // Cerrar modal con X o clic afuera
-  function cerrarModal() {
-    modal?.classList.remove('flex');
-    modal?.classList.add('hidden');
-    document.body.classList.remove('no-scroll');
-  }
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  closeModal?.addEventListener('click', cerrarModal);
-
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) cerrarModal();
-  });
-
-  openRegister?.addEventListener('click', () => {
-    formRegister?.classList.remove('hidden');
-    formLogin?.classList.add('hidden');
-  });
-
-  optionPaciente?.addEventListener('click', () => {
-    inputPaciente.forEach(input => {
-      input.classList.remove('hidden');
-      input.classList.add('block');
+    // Mostrar el modal
+    openButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.body.classList.add('no-scroll');
+        modal?.classList.remove('hidden');
+        modal?.classList.add('flex'); // ✅ agregamos flex dinámicamente
+      });
     });
-    inputMedico.forEach(input => {
-      input.classList.add('hidden');
-      input.classList.remove('block');
-    });
-  });
 
-  optionMedico?.addEventListener('click', () => {
-    inputMedico.forEach(input => {
-      input.classList.remove('hidden');
-      input.classList.add('block');
+    // Cerrar modal con X o clic afuera
+    function cerrarModal() {
+      modal?.classList.remove('flex');
+      modal?.classList.add('hidden');
+      document.body.classList.remove('no-scroll');
+    }
+
+    closeModal?.addEventListener('click', cerrarModal);
+
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) cerrarModal();
     });
-    inputPaciente.forEach(input => {
-      input.classList.add('hidden');
-      input.classList.remove('block');
+
+    openRegister?.addEventListener('click', () => {
+      formRegister?.classList.remove('hidden');
+      formLogin?.classList.add('hidden');
     });
-  });
-})
+
+    optionPaciente?.addEventListener('click', () => {
+      inputPaciente.forEach(input => {
+        input.classList.remove('hidden');
+        input.classList.add('block');
+      });
+      inputMedico.forEach(input => {
+        input.classList.add('hidden');
+        input.classList.remove('block');
+      });
+    });
+
+    optionMedico?.addEventListener('click', () => {
+      inputMedico.forEach(input => {
+        input.classList.remove('hidden');
+        input.classList.add('block');
+      });
+      inputPaciente.forEach(input => {
+        input.classList.add('hidden');
+        input.classList.remove('block');
+      });
+    });
+  })
 </script>

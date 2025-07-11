@@ -1,0 +1,144 @@
+<!-- Modal (solo hidden por defecto) -->
+<div id="reclamaciones-modal" class="fixed inset-0 bg-[conic-gradient(at_top_right,rgba(204,249,223,0.8),rgba(209,214,255,0.8))] items-center justify-center z-50 hidden">
+    <div class="bg-white w-full max-w-6xl rounded-lg shadow-lg relative p-6 max-h-[90vh] overflow-y-auto">
+        <button id="recla-lose-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+        <div class="relative max-w-6xl md:mx-auto mx-6 w-full flex flex-col justify-center bg-white rounded-lg p-6">
+              <div class="text-start mb-7">
+                  <a class="grow block mb-8" href="/">
+                      <img class="h-16 mx-auto" src="/logo.svg" alt="images">
+                  </a>
+                  <div class="text-center">
+                      <h3 class="text-3xl font-bold text-dark text-primary-light mb-1">Libro de Reclamaciones</h3>
+                      <p class="text-lg font-medium text-primary">Ingresa tus datos para poder enviar tu reclamación</p>
+                  </div>
+              </div>
+  
+            <form class="text-start w-full" id="formReclamo">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+                  <!-- Numeración y Código -->
+                  <div>
+                    <input type="text" placeholder="Numeración correlativa" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:border-primary focus:outline-0 placeholder:text-light placeholder:text-base" readonly value="REC-2025-001">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Código de identificación" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:border-primary focus:outline-0 placeholder:text-light placeholder:text-base">
+                  </div>
+              
+                  <!-- Fecha del reclamo o queja -->
+                  <div>
+                    <input type="date" placeholder="Fecha del reclamo o queja" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:border-primary focus:outline-0 placeholder:text-light placeholder:text-base">
+                  </div>
+              
+                  <!-- Nombre y dirección del proveedor -->
+                  <div>
+                    <input type="text" placeholder="Nombre del proveedor" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:border-primary focus:outline-0 placeholder:text-light placeholder:text-base">
+                  </div>
+                  <div class="sm:col-span-2">
+                    <input type="text" placeholder="Dirección del establecimiento" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:border-primary focus:outline-0 placeholder:text-light placeholder:text-base">
+                  </div>
+              
+                  <!-- Datos del consumidor -->
+                  <div class="sm:col-span-2 text-sm font-semibold text-gray-600 mt-4">Datos del consumidor reclamante:</div>
+                  <div>
+                    <input type="text" placeholder="Nombre completo" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Domicilio" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="N° de documento de identidad" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Teléfono" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+                  <div class="sm:col-span-2">
+                    <input type="email" placeholder="Correo electrónico" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+              
+                  <!-- Representante legal -->
+                  <div class="sm:col-span-2 text-sm font-semibold text-gray-600 mt-4">Datos del representante legal (si corresponde):</div>
+                  <div>
+                    <input type="text" placeholder="Nombre completo" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Domicilio" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="N° de documento de identidad" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Teléfono" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+                  <div class="sm:col-span-2">
+                    <input type="email" placeholder="Correo electrónico" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+              
+                  <!-- Identificación del producto o servicio -->
+                  <div class="sm:col-span-2">
+                    <input type="text" placeholder="Producto o servicio contratado" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ...">
+                  </div>
+              
+                  <!-- Detalle de la reclamación -->
+                  <div class="sm:col-span-2">
+                    <textarea placeholder="Detalle del reclamo o queja" rows="4" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ..."></textarea>
+                  </div>
+              
+                  <!-- Pedido del consumidor -->
+                  <div class="sm:col-span-2">
+                    <textarea placeholder="Pedido del consumidor" rows="3" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ..."></textarea>
+                  </div>
+              
+                  <!-- Observaciones del proveedor -->
+                  <div class="sm:col-span-2">
+                    <textarea placeholder="Observaciones y acciones adoptadas por el proveedor" rows="3" class="block w-full rounded-md py-2.5 border border-gray-300 px-4 ..."></textarea>
+                  </div>
+              
+                  <!-- Validación electrónica -->
+                  <div class="sm:col-span-2 flex items-center gap-2">
+                    <input id="valida" type="checkbox" class="w-5 h-5 text-primary border-gray-300 rounded focus:ring-primary">
+                    <label for="valida" class="text-sm text-gray-700">Declaro que estoy de acuerdo con el contenido del presente reclamo o queja.</label>
+                  </div>
+              
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-2.5 bg-primary font-bold text-base  text-white rounded-md transition-all duration-500">Registrar reclamo </button>
+                  </div>
+              </form>
+              
+        </div>
+      <slot />
+    </div>
+  </div>
+  
+  <script is:inline>
+    document.addEventListener('astro:page-load', () => {
+      const modalRecla = document.getElementById('reclamaciones-modal');
+      const closeModal = document.getElementById('recla-lose-modal');
+      const openButtons = document.querySelectorAll('.open-modal-reclamaciones');
+      
+      // Mostrar el modal
+      openButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.body.classList.add('no-scroll');
+          modalRecla?.classList.remove('hidden');
+          modalRecla?.classList.add('flex'); // ✅ agregamos flex dinámicamente
+        });
+      });
+  
+      // Cerrar modal con X o clic afuera
+      function cerrarModal() {
+        modalRecla?.classList.remove('flex');
+        modalRecla?.classList.add('hidden');
+        document.body.classList.remove('no-scroll');
+      }
+  
+      closeModal?.addEventListener('click', cerrarModal);
+  
+      modalRecla?.addEventListener('click', (e) => {
+        if (e.target === modal) cerrarModal();
+      });
+  
+      
+    })
+  </script>
+  

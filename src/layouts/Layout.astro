@@ -7,6 +7,7 @@ import "../styles/global.css";
 import Footer from "../sections/Footer.astro";
 import AvisoCookies from "../components/AvisoCookies.astro";
 import ModalLogin from "../components/ModalLogin.astro";
+import ModalReclamaciones from "../components/ModalReclamaciones.astro";
 ---
 <!doctype html>
 <html lang="es">
@@ -21,6 +22,7 @@ import ModalLogin from "../components/ModalLogin.astro";
 		<Navbar />
 		<slot />
 		<ModalLogin />
+		<ModalReclamaciones />
 		<Footer />
 		<AvisoCookies />
 	</body>
@@ -33,4 +35,58 @@ import ModalLogin from "../components/ModalLogin.astro";
 	.no-scroll {
 		overflow: hidden;
 	}
+	.no-access{
+		display: none;
+	}
+	.access{
+		display: block;
+	}
 </style>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const btnLoginDropdown = document.getElementById('loginDropdown');
+		const btnAdminDropdown = document.getElementById('adminDropdown');
+		const accessElements = document.querySelectorAll('.access') as NodeListOf<HTMLElement>;
+		const noAccessElements = document.querySelectorAll('.no-access') as NodeListOf<HTMLElement>;
+
+		// Esta función muestra u oculta los elementos según el estado
+		function toggleAccess(loggedIn: boolean) {
+		if (loggedIn) {
+			btnLoginDropdown?.classList.add('hidden');
+			btnAdminDropdown?.classList.remove('hidden');
+
+			accessElements.forEach(el => el.style.display = 'none');
+			noAccessElements.forEach(el => el.style.display = 'block');
+		} else {
+			btnLoginDropdown?.classList.remove('hidden');
+			btnAdminDropdown?.classList.add('hidden');
+
+			accessElements.forEach(el => el.style.display = 'block');
+			noAccessElements.forEach(el => el.style.display = 'none');
+		}
+		}
+
+		// Al cargar la página
+		toggleAccess(localStorage.getItem('loginGastrolab') === 'true');
+
+		// Listener global para cambios de login
+		window.addEventListener('storage', (e) => {
+		if (e.key === 'loginGastrolab') {
+			toggleAccess(e.newValue === 'true');
+		}
+		});
+
+		// Función para simular login (puedes reemplazarla con la lógica real)
+		// function loginGastrolab() {
+		// localStorage.setItem('loginGastrolab', 'true');
+		// toggleAccess(true);
+		// }
+
+		// // Función para cerrar sesión
+		// function logoutGastrolab() {
+		// localStorage.removeItem('loginGastrolab');
+		// toggleAccess(false);
+		// }
+	})
+</script>
