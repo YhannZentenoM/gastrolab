@@ -5,11 +5,11 @@ const { title, content, image, slug } = Astro.props;
 
 <article class="w-full">
     <img class="w-full aspect-video" decoding="async" src={image} alt={title} />
-    <a href={`/blog/${slug}`} class="block mt-5">
+    <a href={slug} class="block mt-5">
         <h2 class="text-xl font-bold">
             {title}
         </h2>
     </a>
     <div class="text-black/70 my-6" set:html={content}></div>
-    <a class="mr-5 font-medium" href={`/blog/${slug}`}>Ver más</a>➝
+    <a class="mr-5 font-medium" href={slug}>Ver más</a>➝
 </article>

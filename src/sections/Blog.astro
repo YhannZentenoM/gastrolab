@@ -27,7 +27,7 @@ const postsBlogLatest = await getLatestPost({perPage: 3, category: "5"});
                     title={post.title} 
                     content={post.content} 
                     image={post.image} 
-                    slug={post.slug} 
+                    slug={`/blog/${post.slug}`} 
                 />
             ))
         }

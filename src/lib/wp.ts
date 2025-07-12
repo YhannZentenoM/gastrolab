@@ -29,10 +29,11 @@ export const getLatestPost = async ({
     throw new Error('Failed to fetch posts');
   }
   const result = await response.json();
-  if (!result.length) {
-    throw new Error('No posts found');
+
+  if (!result?.length) {
+    console.error('No posts found');
   }
-  const posts = result.map((post: any) => ({
+  const posts = result?.map((post: any) => ({
     title: post.title.rendered,
     content: post.excerpt.rendered,
     image: post._embedded['wp:featuredmedia'][0].source_url,

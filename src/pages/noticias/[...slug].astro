@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TitleBar from "../../sections/TitleBar.astro";
+
+import { getPostSlug, getLatestPost } from "../../lib/wp";
+
+// const capitalize = (str: string) => 
+//   str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+const slug = Astro.params.slug;
+if (!slug) return Astro.redirect("/");
+// const title = capitalize(slug?.split("-").join(" ") || "");
+const { title, content } = await getPostSlug(slug);
+const postsLatest = await getLatestPost({perPage: 10, category: "6"});
+---
+
+<Layout>
+    <TitleBar title={title} />
+    <section class="max-w-7xl mx-auto px-5 py-32 md:px-0">
+        <div class="grid grid-cols-3 gap-10">
+            <div class="col-span-2 content-post">
+                <!-- <img src={image} alt={title} class="w-full object-contain"> -->
+                <div set:html={content}></div>
+            </div>
+            <div class="space-y-10 col-span-1">
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold mb-3">Post recientes</h3>
+                    <ul class="list-disc list-inside">
+                        {
+                            postsLatest.map((post: any) => (
+                                <li class="mb-3"><a href={`/noticias/${post.slug}`}>{post.title}</a></li>
+                            ))
+                        }
+                    </ul>
+                </div>
+                <!-- <div class="p-4">
+                    <h3 class="text-2xl font-bold mb-3">Categorías</h3>
+                    <ul class="list-disc list-inside">
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 1</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 2</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 3</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 4</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 5</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 6</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 7</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 8</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 9</a></li>
+                        <li class="mb-3"><a href="/blog/post-de-blog-1">Categoría 10</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style is:inline>
+    .content-post figure {
+        margin-bottom: 20px;
+    }
+    .content-post p {
+        margin-top: 10px;
+    }
+    .content-post a {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+    .content-post h4 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+</style>
