@@ -17,3 +17,42 @@ export const getPosts = async (category: string) => {
 
   return posts.reverse();
 };
+
+export const getLatestPost = async ({
+  perPage = 10,
+  category,
+}: { perPage?: number; category?: string } = {}) => {
+  const response = await fetch(
+    `${apiUrl}/posts?per_page=${perPage}&categories=${category}&_embed`
+  );
+  if (!response.ok) {
+    throw new Error('Failed to fetch posts');
+  }
+  const result = await response.json();
+  if (!result.length) {
+    throw new Error('No posts found');
+  }
+  const posts = result.map((post: any) => ({
+    title: post.title.rendered,
+    content: post.excerpt.rendered,
+    image: post._embedded['wp:featuredmedia'][0].source_url,
+    slug: post.slug,
+  }));
+  return posts;
+};
+
+export const getPostSlug = async (slug: string) => {
+  const response = await fetch(`${apiUrl}/posts?slug=${slug}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch post');
+  }
+  const [result] = await response.json();
+  const {
+    title: { rendered: title },
+    content: { rendered: content },
+  } = result;
+  return {
+    title,
+    content,
+  };
+};

@@ -1,10 +1,15 @@
+---
+const { title, content, image, slug } = Astro.props;
+
+---
+
 <article class="w-full">
-    <img class="w-full aspect-video" decoding="async" src="https://themes.webdevia.com/laboratory/wp-content/uploads/2016/11/doc-labwork-1-366x240.jpg" alt="Title of Single Post with Image I">
-    <a href="#" class="block mt-5">
+    <img class="w-full aspect-video" decoding="async" src={image} alt={title} />
+    <a href={`/blog/${slug}`} class="block mt-5">
         <h2 class="text-xl font-bold">
-            Title of Single Post with Image I
+            {title}
         </h2>
     </a>
-    <p class="text-black/70 my-6">Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
-    <a class="mr-5 font-medium" href="/blog/post-de-blog-1">Ver más</a>➝
+    <div class="text-black/70 my-6" set:html={content}></div>
+    <a class="mr-5 font-medium" href={`/blog/${slug}`}>Ver más</a>➝
 </article>

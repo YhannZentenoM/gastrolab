@@ -68,14 +68,18 @@ const BuscadorExamenes = () => {
           </div>
         </div>
         <div className='w-full text-right'>
-          <button className='bg-primary border border-primary font-bold text-base rounded-2xl py-3 px-5 pl-20 text-white transition-all duration-300 relative cursor-pointer hover:drop-shadow-primary-card'>
+          <a
+            href='http://www.gastrolabperu.com/userfiles/cms/examen/documento/formulario-de-solicitud-de-examenes-2016.pdf'
+            target='_blank'
+            className='bg-primary border border-primary font-bold text-base rounded-2xl py-3 px-5 pl-20 text-white transition-all duration-300 relative cursor-pointer hover:drop-shadow-primary-card'
+          >
             <img
               src='/recursos/file.png'
               alt='archivo'
               className='w-12 absolute left-5 -top-5'
             />
             Decarga el formato de tus solicitudes aquí
-          </button>
+          </a>
         </div>
       </div>
       <div className='max-w-7xl mx-auto px-5 md:px-0'>
