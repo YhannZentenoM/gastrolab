@@ -1,43 +1,29 @@
 <!-- Nombre , Apellido, DNI, Fecha de nacimiento, Correo electrónico, sexo y número de celular -->
+<!-- TODO: Agregar validaciones, solo mostrar formulario cuando no hay registro -->
 <form action="" class="flex flex-col md:flex-row items-stretch">
     <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3 flex-1 bg-white rounded-3xl p-5 z-10">
         <div>
             <label class="sr-only" for="name">Nombres</label>
-            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu nombre" type="text" id="name">
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu nombre" type="text" >
         </div>
         <div>
             <label class="sr-only" for="name">Apellidos</label>
-            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu apellido" type="text" id="name">
-        </div>
-        <div>
-            <label class="sr-only" for="name">Correo electrónico</label>
-            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu correo electrónico" type="email" id="name">
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tus apellidos" type="text" >
         </div>
         <div>
             <label class="sr-only" for="email">Documento de Identidad</label>
-            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu DNI" type="email" id="email">
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu DNI" type="email" >
         </div>
-        <div>
-            <label class="sr-only" for="phone">Fecha de nacimiento</label>
-            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" type="date" id="phone">
+        <div class="col-span-2">
+            <label class="sr-only" for="name">Correo electrónico</label>
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu correo electrónico" type="email" >
         </div>
         <div>
             <label class="sr-only" for="phone">Celular</label>
-            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu número de celular" type="tel" id="phone">
+            <input class="w-full border border-gray-200 p-3 text-sm focus:ring-transparent focus:border-gray-300" placeholder="Ingresa tu número de celular" type="tel" >
         </div>
-        <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 col-span-3">
-            <div>
-                <input class="peer sr-only" id="option1" type="radio" tabindex="-1" name="option">
-                <label for="option1" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
-                    <span class="text-sm">Masculino</span>
-                </label>
-            </div>
-            <div>
-                <input class="peer sr-only" id="option2" type="radio" tabindex="-1" name="option">
-                <label for="option2" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
-                    <span class="text-sm">Femenino</span>
-                </label>
-            </div>
+        <div class="col-span-3">
+            <p class="italic text-sm">* Si ya tienes una cuenta, inicia sesión <span class="open-modal cursor-pointer font-medium text-primary">aquí<span/></p>
         </div>
     </div>
     <div>

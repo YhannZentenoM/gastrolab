@@ -34,13 +34,43 @@ const ModalPruebas = ({ info, isActive, setIsActive }) => {
           <div className='flex flex-col md:flex-row items-center justify-between gap-10 border-b border-black/20'>
             <div className='flex items-center justify-start gap-10 flex-1'>
               <p className='text-sm text-left text-black/70 py-3 px-5'>
-                <strong>Sección:</strong> {info.seccion}
+                <strong>Sección:</strong>{' '}
+                {Array.isArray(info.seccion)
+                  ? info.seccion?.join(', ')
+                  : info.seccion}
               </p>
               <p className='text-sm text-left text-black/70 py-3 px-5'>
                 <strong>Código:</strong> {info.code}
               </p>
             </div>
-            <div>{info.document && 'Document'}</div>
+            <div className='inline-flex gap-x-2'>
+              {info.document && (
+                <a
+                  href={info.document}
+                  target='_blank'
+                  className='bg-primary inline-flex items-center justify-center gap-x-2 border border-primary font-bold text-sm rounded-2xl py-2 px-4 text-white transition-all duration-300 cursor-pointer hover:drop-shadow-primary-card'
+                >
+                  <img
+                    src='/recursos/pdf.svg'
+                    alt='Descargar ficha'
+                    className='h-6 w-6'
+                  />
+                  Descargar ficha
+                </a>
+              )}
+              <a
+                href={`https://api.whatsapp.com/send?phone=+51988801315&text=Hola,%20Solicito%20exámenes:%20${info.name}`}
+                target='_blank'
+                className='bg-[#25D366] inline-flex items-center justify-center gap-x-2 border border-[#25D366] font-bold text-sm rounded-2xl py-2 px-4 text-white transition-all duration-300 cursor-pointer hover:drop-shadow-[#25D366]-card'
+              >
+                <img
+                  src='/recursos/whatsapp.svg'
+                  alt='Solicitar exámenes'
+                  className='h-6 w-6'
+                />
+                Solicitar exámenes
+              </a>
+            </div>
           </div>
         </div>
 
@@ -75,7 +105,7 @@ const TablePruebas = ({ info }) => {
           padding-left: 1.2em;
           text-indent: -1.2em;
         }
-        a {
+        table a {
           color: #0070f3;
           font-weight: 600;
         }

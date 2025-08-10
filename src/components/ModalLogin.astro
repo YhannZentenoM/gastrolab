@@ -16,7 +16,7 @@
             <form class="text-start w-full" id="formLogin">
               <div class="mb-4">
                   <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Correo electrónico</label>
-                  <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base" type="email" placeholder="Ingresa tu correo electrónico">
+                  <input class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base" type="email" placeholder="Ingresa tu correo electrónico">
               </div>
               <div class="mb-4">
                   <label for="password-addon" class="block text-base font-semibold text-dark mb-2">Contraseña</label>
@@ -37,7 +37,7 @@
           </form>
 
           <form class="text-start w-full hidden" id="formRegister">
-            <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 col-span-3">
+            <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3 col-span-3">
               <div>
                   <input class="peer sr-only" id="optionPaciente" type="radio" tabindex="-1" name="option" checked>
                   <label for="optionPaciente" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
@@ -50,30 +50,36 @@
                       <span class="text-sm">Médico</span>
                   </label>
               </div>
+              <div>
+                  <input class="peer sr-only" id="optionMedico" type="radio" tabindex="-1" name="option">
+                  <label for="optionMedico" class="block w-full p-3 border border-gray-200 text-gray-600 bg-white hover:border-gray-200 peer-checked:border-black peer-checked:bg-black peer-checked:text-white" tabindex="0">
+                      <span class="text-sm">Empresa</span>
+                  </label>
+              </div>
             </div>
             <div class="my-4">
               <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Nombres</label> -->
-              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tus nombres">
+              <input class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tus nombres">
             </div>
             <div class="my-4">
               <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Apellidos</label> -->
-              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tus apellidos">
+              <input class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tus apellidos">
             </div>
             <div class="my-4">
               <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Correo electrónico</label> -->
-              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="email" placeholder="Ingresa tu correo electrónico">
+              <input class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="email" placeholder="Ingresa tu correo electrónico">
             </div>
             <div class="my-4">
               <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Documento de Identidad</label> -->
-              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tu documento de identidad">
+              <input class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tu documento de identidad">
             </div>
             <div class="my-4">
               <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Fecha de nacimiento</label> -->
-              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="date" placeholder="Ingresa tu fecha de nacimiento">
+              <input class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="date" placeholder="Ingresa tu fecha de nacimiento">
             </div>
             <div class="my-4">
               <!-- <label for="email-addon" class="block text-base font-semibold text-dark mb-2">Celular</label> -->
-              <input id="email-addon" class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tu celular">
+              <input class="block w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputPaciente" type="text" placeholder="Ingresa tu celular">
             </div>
             <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 col-span-3 inputPaciente">
               <div>
@@ -91,22 +97,22 @@
             </div>
             <!-- MEDICO -->
             <div class="my-4">
-              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tus nombres">
+              <input class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tus nombres">
             </div>
             <div class="my-4">
-              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tus apellidos">
+              <input class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tus apellidos">
             </div>
             <div class="my-4">
-              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="email" placeholder="Ingresa tu correo electrónico">
+              <input class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="email" placeholder="Ingresa tu correo electrónico">
             </div>
             <div class="my-4">
-              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tu celular">
+              <input class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tu celular">
             </div>
             <div class="my-4">
-              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tu número de CMP">
+              <input class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="text" placeholder="Ingresa tu número de CMP">
             </div>
             <div class="my-4">
-              <input id="email-addon" class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="email" placeholder="Ingresa tu especialidad">
+              <input class=" w-full rounded-md py-2.5 px-4 text-dark text-base font-medium border border-gray-300 focus:gray-300 focus:border-primary focus:outline-0 focus:ring-0 placeholder:text-light placeholder:text-base inputMedico hidden" type="email" placeholder="Ingresa tu especialidad">
             </div>
             <div class="text-center mt-4">
               <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-2.5 bg-primary font-bold text-base  text-white rounded-md transition-all duration-500">Ingresar </button>

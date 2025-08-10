@@ -2,17 +2,45 @@ export const EXAMENES_NOMBRE = [
   {
     code: 'CF013',
     name: 'Alpha-1 antitripsina fecal (24 horas)',
-    seccion: 'CITOQUIMICA FECAL',
+    seccion: ['CITOQUIMICA FECAL'],
+    enfermedad: [
+      'Alergia Alimentaria',
+      'ASCITIS',
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Enfermedad Intestinal Inflamatoria',
+    ],
   },
   {
     code: 'CF012',
     name: 'Alpha-1 antitripsina fecal (spot aleatorio)',
-    seccion: 'ALERGIA, CITOQUIMICA FECAL, DIGESTION / ABSORCION INTESTINAL',
+    seccion: [
+      'ALERGIA',
+      'CITOQUIMICA FECAL',
+      'DIGESTION / ABSORCION INTESTINAL',
+    ],
+    enfermedad: [
+      'Alergia Alimentaria',
+      'ASCITIS',
+      'Colitis Ulcerativa',
+      'Enfermedad Intestinal Inflamatoria',
+      'Falla de Medro (pobre ganancia de peso)',
+    ],
   },
   {
     code: 'PA017',
     name: 'Ameba histolytica ANTIGENO EN SANGRE o ABSCESO (ELISA)',
-    seccion: 'PARASITOLOGIA',
+    seccion: ['PARASITOLOGIA'],
+    enfermedad: [
+      'Abdomen Hepatico',
+      'ASCITIS',
+      'Fiebre sin Causa Aparente',
+      'Hepato-esplenomegalia',
+      'Ictericia',
+      'Masa Abdominal',
+      'Parasitosis Intestinal : Protozoarios',
+      'Transaminasemia',
+    ],
     document:
       'https://www.gastrolabperu.com/userfiles/cms/examen/documento/absceso.hepatico.amebiano.elisa.pdf',
     description: [
@@ -87,6 +115,33 @@ export const EXAMENES_NOMBRE = [
   {
     code: 'PA013',
     name: 'Ameba histolytica ANTIGENO FECAL (ELISA)',
+    seccion: ['PARASITOLOGIA'],
+    enfermedad: [
+      'Abdomen Hepatico',
+      'Colitis Infecciosa Aguda',
+      'Diarrea Persistente y Crónica',
+      'Hepato-esplenomegalia',
+      'Parasitosis Intestinal : Protozoarios',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+      'Prolapso Rectal',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/ameba.histolytica.antigeno.fecal.elisa.pdf',
+  },
+  {
+    code: 'IN001',
+    name: 'Anti transglutaminasa tisular nuevos epitopes IgA/IgG (ELISA)',
+    seccion: ['INMUNOLOGIA'],
+    enfermedad: [
+      'Enfermedad Celiaca',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Flatulencia y Distensión Abdominal',
+      'Lesiones Cutaneas Asociadas a Enfermedades Gastrointestinales',
+      'MALABSORCION DE CARBOHIDRATOS',
+      'MALABSORCION DE GRASAS',
+      'PERDIDA DE PESO INEXPLICABLE',
+      'SINDROME DE INTESTINO IRRITABLE',
+    ],
   },
   {
     code: 'IN002',
@@ -95,139 +150,405 @@ export const EXAMENES_NOMBRE = [
   {
     code: 'IN004',
     name: 'ASCA IgA+IgG Combi - ELISA (Enfermedad de Crohn)',
+    seccion: ['INMUNOLOGIA'],
+    enfermedad: [
+      'Diarrea Persistente y Crónica',
+      'Enfermedad de Crohn',
+      'Enfermedad Intestinal Inflamatoria',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Flatulencia y Distensión Abdominal',
+      'PERDIDA DE PESO INEXPLICABLE',
+      'SINDROME DE INTESTINO IRRITABLE',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/br-in004_asca_iga%20igg_combi_enfermedad_de_crohn_(elisa)_(oct_2011)_imp.pdf',
   },
   {
     code: 'AP001',
     name: 'Biopsia',
+    seccion: ['ANATOMIA PATOLOGICA'],
   },
   {
     code: 'CF009',
     name: 'Calprotectina fecal',
+    seccion: ['CITOQUIMICA FECAL'],
+    enfermedad: [
+      'Colitis Ulcerativa',
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Enfermedad de Crohn',
+      'Enfermedad Intestinal Inflamatoria',
+      'PERDIDA DE PESO INEXPLICABLE',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/br.cf009.calprotectina.fecal.noviembre.2015.pdf',
   },
   {
     code: 'MB003',
     name: 'Campylobacter ANTIGENO FECAL (ELISA)',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: [
+      'Abdomen Agudo',
+      'Colitis Infecciosa Aguda',
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Enteritis Infecciosa Aguda',
+      'Fiebre sin Causa Aparente',
+      'INFECCION GASTROINTESTINAL INTRAHOSPITALARIA',
+      'INFECCIONES CRONICAS DEL INTESTINO DELGADO',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+      'Prolapso Rectal',
+      'SINDROME HEMOLITICO UREMICO',
+    ],
   },
   {
     code: 'OT001',
     name: 'Cloro en sudor (iontoforesis con pilocarpina)',
+    seccion: ['PANCREAS'],
+    enfermedad: [
+      'Falla de Medro (pobre ganancia de peso)',
+      'Fibrosis Quistica',
+    ],
   },
   {
     code: 'MB004',
     name: 'Clostridium difficile toxina A y B (ELISA)',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: [
+      'Colitis Infecciosa Aguda',
+      'Colitis Pseudomembranosa',
+      'Enteritis Infecciosa Aguda',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/clostridium.difficile.toxina.a.b.elisa.pdf',
   },
   {
     code: 'PA006',
     name: 'Coccidias (TINCION DE KINYOUN)',
+    seccion: ['PARASITOLOGIA'],
+    enfermedad: [
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Diarrea Persistente y Crónica',
+      'INFECCIONES CRONICAS DEL INTESTINO DELGADO',
+      'Parasitosis Intestinal : Protozoarios',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/coccidias.tincion.de.kinyoun.pdf',
   },
   {
     code: 'CF001',
     name: 'COPROLOGICO FUNCIONALCOMPLETO',
+    seccion: ['CITOQUIMICA FECAL', 'MICROBIOLOGIA'],
   },
   {
     code: 'MB001',
     name: 'Cultivo de heces',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: [
+      'Abdomen Agudo',
+      'Colitis Infecciosa Aguda',
+      'Colitis Pseudomembranosa',
+      'Colitis Ulcerativa',
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Diarrea Persistente y Crónica',
+      'Enfermedad Celiaca',
+      'Enfermedad de Crohn',
+      'Enfermedad Intestinal Inflamatoria',
+      'Enteritis Infecciosa Aguda',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Fiebre sin Causa Aparente',
+      'INFECCION GASTROINTESTINAL INTRAHOSPITALARIA',
+      'INFECCIONES CRONICAS DEL INTESTINO DELGADO',
+      'NAUSEA y VOMITOS',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+      'Prolapso Rectal',
+      'Sangrado Gastrointestinal (Visible u Oculto)',
+      'SINDROME DE INTESTINO IRRITABLE',
+      'SINDROME HEMOLITICO UREMICO',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/cultivo.heces.pdf',
   },
   {
     code: 'OT003',
     name: 'Cultivo de orina',
+    seccion: ['MICROBIOLOGIA'],
   },
   {
     code: 'OT007',
     name: 'CULTIVO DE SECRECION DE OIDO',
+    seccion: ['MICROBIOLOGIA'],
   },
   {
     code: 'OT008',
     name: 'CULTIVO DE SECRECION FARINGEA',
+    seccion: ['MICROBIOLOGIA'],
   },
   {
     code: 'OT002',
     name: 'CULTIVO DE SECRECION VAGINAL',
+    seccion: ['MICROBIOLOGIA'],
   },
   {
     code: 'AL003',
     name: 'Despistaje de alergias tipo IgE',
+    seccion: ['ALERGIA'],
+    enfermedad: [
+      'Alergia Alimentaria',
+      'Falla de Medro (pobre ganancia de peso)',
+    ],
   },
   {
     code: 'AL004',
     name: 'EDN (Neurotoxina Derivada de Eosinofilos) fecal',
+    seccion: ['ALERGIA'],
   },
   {
     code: 'CF011',
     name: 'Elastasa 1 (fecal)',
+    seccion: [
+      'CITOQUIMICA FECAL',
+      'DIGESTION / ABSORCION INTESTINAL',
+      'PANCREAS',
+    ],
+    enfermedad: [
+      'Diarrea Persistente y Crónica',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Fibrosis Quistica',
+      'Ictericia',
+      'MALABSORCION DE GRASAS',
+      'PERDIDA DE PESO INEXPLICABLE',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/br-cf011_elasta_1_fecal_(elisa)_(jun_2011)_imp.pdf',
   },
   {
     code: 'CF007',
     name: 'EOSINOFILOS EN HECES',
+    seccion: ['CITOQUIMICA FECAL'],
   },
   {
     code: 'CF005',
     name: 'ESTEATOCRITO ACIDO',
+    seccion: [
+      'CITOQUIMICA FECAL',
+      'DIGESTION / ABSORCION INTESTINAL',
+      'PANCREAS',
+    ],
+    enfermedad: [
+      'Enfermedad Celiaca',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Fibrosis Quistica',
+      'Flatulencia y Distensión Abdominal',
+      'Ictericia',
+      'ICTERICIA EN EL RECIEN NACIDO',
+      'Intestino Delgado Contaminado',
+      'MALABSORCION DE GRASAS',
+      'PERDIDA DE PESO INEXPLICABLE',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+      'SINDROME DE INTESTINO CORTO',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/esteatocrito.acido.pdf',
   },
   {
     code: 'OT006',
     name: 'Examen completo de orina',
+    seccion: ['OTROS'],
   },
   {
     code: 'PA007',
     name: 'Fasciolasis (METODO DE LUMBRERAS)',
+    seccion: ['PARASITOLOGIA'],
+    enfermedad: [
+      'Dolor Abdominal',
+      'Hepato-esplenomegalia',
+      'Ictericia',
+      'Transaminasemia',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/fasciolasis.metodo.de.lumbreras.pdf',
   },
   {
     code: 'AE009',
     name: 'Fructosa prueba de tolerancia',
+    seccion: [
+      'DIGESTION / ABSORCION INTESTINAL',
+      'HIDROGENO/METANO EN ALIENTO',
+    ],
+    enfermedad: [
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Flatulencia y Distensión Abdominal',
+      'Intestino Delgado Contaminado',
+      'MALABSORCION DE CARBOHIDRATOS',
+      'SINDROME DE INTESTINO IRRITABLE',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/prueba.de.tolerancia.fructosa..2019.pdf',
   },
   {
     code: 'OT005',
     name: 'Gap osmolar fecal',
+    seccion: ['CITOQUIMICA FECAL'],
   },
   {
     code: 'PA014',
     name: 'Giardia ANTIGENO FECAL (ELISA)',
+    seccion: ['PARASITOLOGIA'],
+    enfermedad: [
+      'Diarrea del Viajero',
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Flatulencia y Distensión Abdominal',
+      'Parasitosis Intestinal : Protozoarios',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/giardia.antigeno.fecal.elisa.pdf',
   },
   {
     code: 'CF004',
     name: 'Grasa fecal (SUDAN III)',
+    seccion: [
+      'CITOQUIMICA FECAL',
+      'DIGESTION / ABSORCION INTESTINAL',
+      'PANCREAS',
+    ],
+    enfermedad: [
+      'Diarrea Persistente y Crónica',
+      'Enfermedad Celiaca',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Fibrosis Quistica',
+      'Ictericia',
+      'ICTERICIA EN EL RECIEN NACIDO',
+      'Intestino Delgado Contaminado',
+      'MALABSORCION DE GRASAS',
+      'PERDIDA DE PESO INEXPLICABLE',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+      'SINDROME DE INTESTINO CORTO',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/giardia.antigeno.fecal.elisa.pdf',
   },
   {
     code: 'AE002',
     name: 'Helicobacter pylori - test de urea en aliento (carbono 13)',
+    seccion: ['MICROBIOLOGIA', 'CARBONO 13 EN ALIENTO'],
+    enfermedad: [
+      'Disfagia',
+      'Dolor Abdominal',
+      'Dolor Toracico no Cardiaco',
+      'Gastritis Por Helicobacter Pylori',
+    ],
   },
   {
     code: 'MB006',
     name: 'Helicobacter pylori ANTIGENO FECAL',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: [
+      'Disfagia',
+      'Dolor Abdominal',
+      'Dolor Toracico no Cardiaco',
+      'Gastritis Por Helicobacter Pylori',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/br.mb006.helicobacter.antigeno.fecal.diciembre.2015.pdf',
   },
   {
     code: 'MB019',
     name: 'Influenza A/B PRUEBA RAPIDA',
+    seccion: ['MICROBIOLOGIA'],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/br-mb019_influenza_a-b_prueba_rapida_-_septiembre_2012.pdf',
   },
   {
     code: 'AL001',
     name: 'Inmunoglobulina E total en suero',
+    seccion: ['ALERGIA'],
+    enfermedad: [
+      'Alergia Alimentaria',
+      'Dolor Abdominal',
+      'Falla de Medro (pobre ganancia de peso)',
+    ],
   },
   {
     code: 'AE003',
     name: 'Intestino delgado contaminado (glucosa)',
+    seccion: ['HIDROGENO/METANO EN ALIENTO'],
   },
   {
     code: 'AE007',
     name: 'Intestino delgado contaminado (lactulosa)',
+    seccion: ['HIDROGENO/METANO EN ALIENTO'],
+    enfermedad: [
+      'Constipación',
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Enfermedad Celiaca',
+      'Enfermedad de Crohn',
+      'Enfermedad Intestinal Inflamatoria',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Fibrosis Quistica',
+      'Flatulencia y Distensión Abdominal',
+      'Ileostomia y Pouch Ileal',
+      'Intestino Delgado Contaminado',
+      'Intolerancia a Lactosa',
+      'MALABSORCION DE CARBOHIDRATOS',
+      'MALABSORCION DE GRASAS',
+      'PERDIDA DE PESO INEXPLICABLE',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+      'SINDROME DE INTESTINO CORTO',
+      'SINDROME DE INTESTINO IRRITABLE',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/intestino.delgado.contaminado.lactulosa.2019.pdf',
   },
   {
     code: 'AE001',
     name: 'Lactosa prueba de tolerancia',
+    seccion: [
+      'HIDROGENO/METANO EN ALIENTO',
+      'DIGESTION / ABSORCION INTESTINAL',
+    ],
+    enfermedad: [
+      'Constipación',
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Flatulencia y Distensión Abdominal',
+      'Intolerancia a Lactosa',
+      'MALABSORCION DE CARBOHIDRATOS',
+      'SINDROME DE INTESTINO CORTO',
+      'SINDROME DE INTESTINO IRRITABLE',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/prueba.de.tolerancia.lactosa.2019.pdf',
   },
   {
     code: 'AP005',
     name: 'LAMINA O PIEZA EN CONSULTA (SEGUNDA OPINION)',
+    seccion: ['ANATOMIA PATOLOGICA'],
   },
   {
     code: 'MB005',
     name: 'Micobacterias en heces (BAAR)',
+    seccion: ['MICROBIOLOGIA'],
   },
   {
     code: 'MB012',
     name: 'Norovirus ANTIGENO FECAL (ELISA)',
-    seccion: 'MICROBIOLOGIA',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: [
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Enteritis Infecciosa Aguda',
+      'INFECCION GASTROINTESTINAL INTRAHOSPITALARIA',
+      'NAUSEA y VOMITOS',
+    ],
     description: [
       {
         title: 'Descripción',
@@ -294,43 +615,124 @@ export const EXAMENES_NOMBRE = [
   {
     code: 'PA005',
     name: 'Oxiuros (METODO DE GRAHAM)',
+    seccion: ['PARASITOLOGIA'],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/br-pa005_oxiuros_metodo_de_graham_(oct_2011).pdf',
   },
   {
     code: 'MB030',
     name: 'Panel Gastrointestinal (PCR - FilmArray)',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: [
+      'Colitis Infecciosa Aguda',
+      'Colitis Pseudomembranosa',
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Enfermedades Infecciosas',
+      'Enteritis Infecciosa Aguda',
+      'INFECCION GASTROINTESTINAL INTRAHOSPITALARIA',
+      'INFECCIONES CRONICAS DEL INTESTINO DELGADO',
+      'Parasitosis Intestinal : Protozoarios',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/panel.gi.filmarray.2018.2.pdf',
   },
   {
     code: 'MB031',
     name: 'Panel Meningitis-Encefalitis (PCR - FilmArray)',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: ['Enfermedades Infecciosas'],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/panel.me.filmarray.2018.pdf',
   },
   {
     code: 'PA004',
     name: 'PARASITOLOGICO COMPLETO (tres muestras)',
+    seccion: ['PARASITOLOGIA'],
+    enfermedad: [
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Flatulencia y Distensión Abdominal',
+      'Parasitosis Intestinal : Helmintos',
+      'Parasitosis Intestinal : Protozoarios',
+      'PERDIDA DE PESO INEXPLICABLE',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/parasitologico.completo.tres.muestras.pdf',
   },
   {
     code: 'PA003',
     name: 'PARASITOLOGICO COMPLETO (una muestra)',
+    seccion: ['PARASITOLOGIA'],
+    enfermedad: [
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Parasitosis Intestinal : Helmintos',
+      'Parasitosis Intestinal : Protozoarios',
+      'PERDIDA DE PESO INEXPLICABLE',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/parasitologico.completo.una.muestra.pdf',
   },
   {
     code: 'AE005',
     name: 'PRUEBA DE ABSORCION INTESTINAL (sorbitol)',
+    seccion: [
+      'HIDROGENO/METANO EN ALIENTO',
+      'DIGESTION / ABSORCION INTESTINAL',
+    ],
+    enfermedad: [
+      'Diarrea Persistente y Crónica',
+      'Enfermedad Celiaca',
+      'Fibrosis Quistica',
+      'Flatulencia y Distensión Abdominal',
+      'Intestino Delgado Contaminado',
+      'Intolerancia a Lactosa',
+      'MALABSORCION DE CARBOHIDRATOS',
+      'MALABSORCION DE GRASAS',
+      'PERDIDA DE PESO INEXPLICABLE',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+      'SINDROME DE INTESTINO CORTO',
+      'SINDROME DE INTESTINO IRRITABLE',
+    ],
   },
   {
     code: 'CF006',
     name: 'REACCION INFLAMATORIA (MICROSCOPIA)',
+    seccion: ['CITOQUIMICA FECAL'],
   },
   {
     code: 'MB008',
     name: 'Rotavirus ANTIGENO FECAL (ELISA)',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: [
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Enteritis Infecciosa Aguda',
+      'INFECCION GASTROINTESTINAL INTRAHOSPITALARIA',
+      'NAUSEA y VOMITOS',
+      'Problemas Gastrointestinales en Paciente Inmunocomprometido',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/rotavirus.antigeno.fecal.elisa.pdf',
   },
   {
     code: 'CF010',
     name: 'Sangre oculta en heces (INMUNOCROMATOGRAFIA)',
+    seccion: ['CITOQUIMICA FECAL'],
   },
   {
     code: 'SE01A',
     name: 'Serie diarrea acuosa',
-    seccion: '',
+    seccion: [],
     tabs: [
       {
         code: 'MB003',
@@ -571,7 +973,7 @@ export const EXAMENES_NOMBRE = [
       {
         code: 'MB001',
         label: 'Norovirus ANTIGENO FECAL (ELISA)',
-        seccion: 'MICROBIOLOGIA',
+        seccion: ['MICROBIOLOGIA'],
         document:
           'https://www.gastrolabperu.com/userfiles/cms/examen/documento/norovirus.antigeno.fecal.elisa.pdf',
         content: [
@@ -656,7 +1058,7 @@ export const EXAMENES_NOMBRE = [
       {
         code: 'MB008',
         label: 'Rotavirus ANTIGENO FECAL (ELISA)',
-        seccion: 'MICROBIOLOGIA',
+        seccion: ['MICROBIOLOGIA'],
         document:
           'https://www.gastrolabperu.com/userfiles/cms/examen/documento/rotavirus.antigeno.fecal.elisa.pdf',
         content: [
@@ -743,61 +1145,99 @@ export const EXAMENES_NOMBRE = [
   {
     code: 'SE01B',
     name: 'Serie diarrea con sangre',
+    seccion: [],
   },
   {
     code: 'SE007',
     name: 'SERIE DIARREA CRONICA NO INFECCIOSA',
+    seccion: [],
   },
   {
     code: 'SE002',
     name: 'Serie diarrea persistente',
+    seccion: [],
   },
   {
     code: 'SE005',
     name: 'Serie DISTENSION ABDOMINAL Y FLATULENCIA',
+    seccion: [],
   },
   {
     code: 'SE004',
     name: 'Serie dolor abdominal recurrente',
+    seccion: [],
   },
   {
     code: 'SE008',
     name: 'Serie enfermedad inflamatoria intestinal (IBD)',
+    seccion: [],
   },
   {
     code: 'SE006',
     name: 'Serie falla de medro (pobre ganancia de peso)',
+    seccion: [],
   },
   {
     code: 'SE003',
     name: 'Serie giardiasis',
+    seccion: [],
   },
   {
     code: 'SE009',
     name: 'SERIE PERDIDA DE PESO INEXPLICABLE',
+    seccion: [],
   },
   {
     code: 'MB024',
     name: 'Strep A - PRUEBA RAPIDA',
+    seccion: ['MICROBIOLOGIA'],
   },
   {
     code: 'AE008',
     name: 'Sucrosa prueba de tolerancia',
+    seccion: [
+      'HIDROGENO/METANO EN ALIENTO',
+      'DIGESTION / ABSORCION INTESTINAL',
+    ],
+    enfermedad: [
+      'Diarrea Persistente y Crónica',
+      'Dolor Abdominal',
+      'Falla de Medro (pobre ganancia de peso)',
+      'Flatulencia y Distensión Abdominal',
+      'MALABSORCION DE CARBOHIDRATOS',
+      'SINDROME DE INTESTINO IRRITABLE',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/prueba.de.tolerancia.sucrosa.2019.pdf',
   },
   {
     code: 'CF002',
     name: 'Sustancias reductoras en heces',
+    seccion: ['CITOQUIMICA FECAL'],
   },
   {
     code: 'AE004',
     name: 'TIEMPO DE TRANSITO INTESTINAL (lactulosa)',
+    seccion: ['HIDROGENO/METANO EN ALIENTO'],
   },
   {
     code: 'MB015',
     name: 'Toxinas Shiga con enriquecimiento (ELISA)',
+    seccion: ['MICROBIOLOGIA'],
   },
   {
     code: 'MB014',
     name: 'Toxinas Shiga directo en heces (ELISA)',
+    seccion: ['MICROBIOLOGIA'],
+    enfermedad: [
+      'Abdomen Agudo',
+      'Colitis Infecciosa Aguda',
+      'Diarrea Aguda',
+      'Diarrea del Viajero',
+      'Enteritis Infecciosa Aguda',
+      'SINDROME HEMOLITICO UREMICO',
+    ],
+    document:
+      'https://www.gastrolabperu.com/userfiles/cms/examen/documento/toxinas.shiga.directo.elisa.pdf',
   },
 ];

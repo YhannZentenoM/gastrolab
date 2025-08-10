@@ -5,7 +5,6 @@ import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
 import Blog from "../sections/Blog.astro";
 import Evaluation from "../sections/Evaluation.astro";
-import Resources from "../sections/Resources.astro";
 import Map from "../sections/Map.astro";
 import FormRegisterMedico from "../components/FormRegisterMedico.astro";
 
@@ -23,12 +22,12 @@ import ContactMail from "../sections/ContactMail.astro";
     </section>
     <section class="mt-32 px-5 md:px-0">
         <div class="max-w-7xl mx-auto">
-            <Title title="Busca tus pruebas" classTitle={"text-center"} positionBar={"center"} />
+            <Title title="Portafolio de pruebas" classTitle={"text-center"} positionBar={"center"} />
+            <ContainerSearch title="Busqueda de pruebas por orden alfabético" tipo="Médico" image="doctora-rubia.webp" link="/buscador" modal={false} />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-20">
                 <Pills id="" title="Por Enfermedad" description="Busque aquí su examen ordenado por enfermedad." image="enfermedad.webp" link="/buscador" sizeImg="h-20 md:h-40" modal={false} />
                 <Pills id="" title="Por Síndrome" description="Busque aquí su examen ordenado por síndrome." image="condicion.webp" link="/buscador" sizeImg="h-20 md:h-40" modal={false} />
             </div>
-            <ContainerSearch title="Busqueda de pruebas por orden alfabético" tipo="Médico" image="doctora-rubia.webp" link="/buscador" modal={false} />
         </div>
     </section>
     <section class="mt-20">
@@ -76,7 +75,6 @@ import ContactMail from "../sections/ContactMail.astro";
         </div>
     </section>
     <Blog />
-    <Resources />
     <ContactMail />
     <Evaluation />
     <Map heightMap="450" />

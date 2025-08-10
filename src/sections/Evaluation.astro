@@ -42,6 +42,9 @@ import Title from "../components/Title.astro";
 
     // Crear botones del 1 al 10
     for (let i = 1; i <= 10; i++) {
+      const wrapper = document.createElement('div'); // Contenedor botón + icono
+      wrapper.className = 'flex flex-col items-center';
+
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.textContent = i;
@@ -49,7 +52,27 @@ import Title from "../components/Title.astro";
       btn.dataset.value = i;
       btn.setAttribute('role', 'radio');
       btn.setAttribute('aria-checked', 'false');
-      container.appendChild(btn);
+
+      wrapper.appendChild(btn);
+
+      // Agregar SVG debajo solo para 1 y 10
+      if (i === 1) {
+        const svgSad = document.createElement('div');
+        svgSad.innerHTML = `
+          <img src="/recursos/sad.svg" alt="icono de tristeza" class="w-7 h-7 mt-1">
+        `;
+        wrapper.appendChild(svgSad);
+      }
+
+      if (i === 10) {
+        const svgHappy = document.createElement('div');
+        svgHappy.innerHTML = `
+          <img src="/recursos/smile.svg" alt="icono de felicidad" class="w-7 h-7 mt-1">
+        `;
+        wrapper.appendChild(svgHappy);
+      }
+
+      container.appendChild(wrapper);
     }
 
     // Delegación de eventos
