@@ -25,6 +25,7 @@ export const getLatestPost = async ({
   const response = await fetch(
     `${apiUrl}/posts?per_page=${perPage}&categories=${category}&_embed`
   );
+  console.log(response);
   if (!response.ok) {
     throw new Error('Failed to fetch posts');
   }

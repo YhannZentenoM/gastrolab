@@ -12,6 +12,7 @@ import Resources from "../sections/Resources.astro";
 import Blog from "../sections/Blog.astro";
 import FormRegisterPaciente from "../components/FormRegisterPaciente.astro";
 import ContactMail from "../sections/ContactMail.astro";
+import Tabs from "../components/Tabs.astro";
 
 interface Post {
   title: string;
@@ -60,19 +61,7 @@ const postsEnfermedades = await getPosts("3");
     <section class="px-5 md:px-0">
         <div class="max-w-7xl mx-auto mt-32">
             <Title title="Prepararse para una cita" classTitle={"text-left"} positionBar={"bottom"} />
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
-                {
-                    postsCita.map((post: Post) => (
-                        <div class="relative">
-                            <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
-                                <Icon name="bars" class="text-white text-2xl" />
-                            </span>
-                            <h3 class="text-xl font-bold pl-20">{post.title}</h3>
-                            <p class="text-black/70 pl-20 mt-3">{stripHtml(post.content)}</p>
-                        </div>
-                    ))
-                }
-            </div>
+            <Tabs />
         </div>
     </section>
     <section class="flex flex-col md:flex-row mt-32">

@@ -1,0 +1,108 @@
+---
+import { getPosts } from "../lib/wp";
+import { Icon } from 'astro-icon/components'
+
+interface Post {
+  title: string;
+  content: string;
+}
+
+function stripHtml(html: string) {
+  return html.replace(/<[^>]*>/g, '');
+}
+
+const postsCita = await getPosts("1");
+---
+<div class="tabs w-full mt-10">
+  <button class="tab active" data-tab="tab1">Aire esperido</button>
+  <button class="tab" data-tab="tab2">Generales</button>
+</div>
+
+<div id="tab1" class="tab-content active">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
+    <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">No fumar al menos 6 horas antes</h3>
+                    <p class="text-black/70 pl-20 mt-3"></p>
+                </div>
+    <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">Evitar café, té, bebidas energizantes el mismo día (pueden alterar la función respiratoria)</h3>
+                    <p class="text-black/70 pl-20 mt-3"></p>
+                </div>
+    <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">No usar broncodilatadores (inhaladores) varias horas antes, salvo que el médico lo indique.</h3>
+                    <p class="text-black/70 pl-20 mt-3"></p>
+                </div>
+  </div>
+</div>
+<div id="tab2" class="tab-content">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
+        {
+            postsCita.map((post: Post) => (
+                <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">{post.title}</h3>
+                    <p class="text-black/70 pl-20 mt-3">{stripHtml(post.content)}</p>
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 1rem;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    transition: background 0.3s;
+  }
+
+  .tab.active {
+    border-bottom: 2px solid #007BFF;
+    font-weight: bold;
+    color: #007BFF;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+</style>
+
+<script is:inline>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // quitar "active" a todos
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+
+      // activar el actual
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
+</script>
