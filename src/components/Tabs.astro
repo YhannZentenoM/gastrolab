@@ -15,10 +15,19 @@ const postsCita = await getPosts("1");
 ---
 <div class="tabs w-full mt-10">
   <button class="tab active" data-tab="tab1">Aire espirado</button>
-  <button class="tab" data-tab="tab2">Generales</button>
+  <button class="tab" data-tab="tab2">Helicobacter</button>
+  <button class="tab" data-tab="tab3">Generales</button>
 </div>
 
 <div id="tab1" class="tab-content active">
+  <div class="w-full">
+    <a 
+        href="recursos/hidrogeno.metano.aire.espirado.informacion.para.pacientes.setiembre.2025.pdf"
+        target="_blank"
+        class="text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary mx-auto mt-5 block max-w-xs text-center cursor-pointer drop-shadow-xl drop-shadow-primary/30">
+        Descargar documento
+  </a>
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
     <div class="relative">
                     <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
@@ -59,12 +68,46 @@ const postsCita = await getPosts("1");
                     <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
                         <Icon name="bars" class="text-white text-2xl" />
                     </span>
-                    <h3 class="text-xl font-bold pl-20">6. No hacer ejercicios o fumar en la hora previa ni durante el examen.</h3>
+                    <h3 class="text-xl font-bold pl-20">No hacer ejercicios o fumar en la hora previa ni durante el examen.</h3>
                     <p class="text-black/70 pl-20 mt-3"></p>
                 </div>
   </div>
 </div>
 <div id="tab2" class="tab-content">
+  <div class="w-full">
+    <a 
+        href="recursos/carbono.13.hp.informacion.para.pacientes.setiembre.2025.pdf"
+        target="_blank"
+        class="text-xs font-bold text-white bg-primary rounded-full px-7 py-3 border border-primary transition-colors duration-300 uppercase hover:bg-white hover:text-primary hover:border hover:border-primary mx-auto mt-5 block max-w-xs text-center cursor-pointer drop-shadow-xl drop-shadow-primary/30">
+        Descargar documento
+  </a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
+        <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">No haber recibido antibióticos ni medicación antiulcerosa
+en las últimas dos semanas.</h3>
+                    <p class="text-black/70 pl-20 mt-3"></p>
+                </div>
+        <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">Estar en ayunas por al menos 1 hora antes de la prueba.</h3>
+                    <p class="text-black/70 pl-20 mt-3"></p>
+                </div>
+        <div class="relative">
+                    <span class="rounded-full w-14 h-14 bg-primary absolute top-0 left-0 flex items-center justify-center">
+                        <Icon name="bars" class="text-white text-2xl" />
+                    </span>
+                    <h3 class="text-xl font-bold pl-20">No fumar en la hora previa ni durante la prueba.</h3>
+                    <p class="text-black/70 pl-20 mt-3"></p>
+                </div>
+    </div>
+</div>
+<div id="tab3" class="tab-content">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
         {
             postsCita.map((post: Post) => (
