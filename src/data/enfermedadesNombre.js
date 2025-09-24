@@ -445,6 +445,8 @@ export const EXAMENES_NOMBRE = [
       'Dolor Toracico no Cardiaco',
       'Gastritis Por Helicobacter Pylori',
     ],
+    document:
+      'http://gastrolab.vercel.app/recursos/carbono.13.hp.informacion.para.pacientes.setiembre.2025.pdf',
   },
   {
     code: 'MB006',
