@@ -291,7 +291,7 @@ const BuscadorExamenes = () => {
             <input
               type='search'
               className='border border-black/50 rounded-xl w-[80%] md:w-full p-3 text-black/70 placeholder:text-black/40 focus:border-primary focus:outline-none'
-              placeholder='Ingresa lo que estás buscando'
+              placeholder='Ingresar el nombre del examen'
               onChange={handleChange}
             />
             <button
@@ -360,7 +360,7 @@ const BuscadorExamenes = () => {
             />
             <div className='text-white w-full text-right'>
               <h3 className='text-2xl md:text-4xl font-semibold mb-1'>
-                Por Síndrome
+                Por Sección
               </h3>
             </div>
           </button>

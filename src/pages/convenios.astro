@@ -77,8 +77,8 @@ const posts = await getPosts("4");
     <section class="mt-20">
         <div class="max-w-7xl mx-auto flex items-center gap-5 my-20">
             <div class="w-full md:w-[40%] p-5">
-                <Title title={posts[0].title} classTitle={"text-left"} positionBar={"top"} />
-                <div class="convenio" set:html={posts[0].content}> 
+                <Title title={posts[0]?.title} classTitle={"text-left"} positionBar={"top"} />
+                <div class="convenio" set:html={posts[0]?.content}> 
                 </div>
             </div>
             <div class="w-full md:w-[60%]">
@@ -90,15 +90,15 @@ const posts = await getPosts("4");
                 <img src="/recursos/resultados.webp" alt="Resultados GastroLab" class="w-full object-contain" />
             </div>
             <div class="w-full md:w-[40%] p-5">
-                <Title title={posts[1].title} classTitle={"text-left"} positionBar={"top"} />
-                <div class="convenio" set:html={posts[1].content}> 
+                <Title title={posts[1]?.title} classTitle={"text-left"} positionBar={"top"} />
+                <div class="convenio" set:html={posts[1]?.content}> 
                 </div>
             </div>
         </div> 
         <div class="max-w-7xl mx-auto flex items-center gap-5 my-20">
             <div class="w-full md:w-[40%] p-5">
-                <Title title={posts[2].title} classTitle={"text-left"} positionBar={"top"} />
-                <div class="convenio" set:html={posts[2].content}> 
+                <Title title={posts[2]?.title} classTitle={"text-left"} positionBar={"top"} />
+                <div class="convenio" set:html={posts[2]?.content}> 
                 </div>
             </div>
             <div class="w-full md:w-[60%]">
